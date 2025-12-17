@@ -1,0 +1,542 @@
+<!-- ingredients section -->
+<section id="ingredients"
+    class="px-4 py-8 bg-brand-light border-y border-brand-muted/60 max-[450px]:py-6 max-[450px]:px-3">
+    <div class="text-center mb-6">
+        <h2 class="text-3xl max-[450px]:text-2xl font-eczar font-extrabold text-brand-accent">
+            Key Ingredients <span class="text-brand-primary">(मुख्य जड़ी-बूटियाँ)</span>
+        </h2>
+        <div class="mx-auto mt-3 h-1.5 w-28 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full"></div>
+    </div>
+
+    <div class="ingredient-grid">
+        <!-- Card 1 -->
+        <article class="ingredient-card">
+            <span class="ingredient-badge">🌿 Pure</span>
+            <figure class="ingredient-img">
+                <img src="./Image/Ind1.png" alt="हल्दी (Turmeric)" class="w-full h-full object-cover clip-ingredient" />
+            </figure>
+            <div>
+                <h3 class="ingredient-title"><span class="ingredient-icon">✨</span>हल्दी</h3>
+                <p class="ingredient-desc">सूजन और अंदरूनी संक्रमण कम करे</p>
+            </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="ingredient-card">
+            <span class="ingredient-badge">💚 Natural</span>
+            <figure class="ingredient-img">
+                <img src="./Image/Ind2.avif" alt="गिलोय (Giloy)" class="w-full h-full object-cover clip-ingredient" />
+            </figure>
+            <div>
+                <h3 class="ingredient-title"><span class="ingredient-icon">🌱</span>गिलोय</h3>
+                <p class="ingredient-desc">शरीर को शुद्ध करे</p>
+            </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="ingredient-card">
+            <span class="ingredient-badge">⭐ Potent</span>
+            <figure class="ingredient-img">
+                <img src="./Image/Ind3.png" alt="अश्वगंधा (Ashwagandha)"
+                    class="w-full h-full object-cover clip-ingredient" />
+            </figure>
+            <div>
+                <h3 class="ingredient-title"><span class="ingredient-icon">💪</span>अश्वगंधा</h3>
+                <p class="ingredient-desc">टिश्यू को मज़बूत बनाए</p>
+            </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="ingredient-card">
+            <span class="ingredient-badge">🔬 Proven</span>
+            <figure class="ingredient-img">
+                <img src="./Image/Ind4.png" alt="शुद्ध गुग्गुल (Shuddh Guggul)"
+                    class="w-full h-full object-cover clip-ingredient" />
+            </figure>
+            <div>
+                <h3 class="ingredient-title"><span class="ingredient-icon">🌟</span>शुद्ध गुग्गुल</h3>
+                <p class="ingredient-desc">फैटी और फाइब्रस गाँठ को तोड़ने में मदद करे</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- Offer Section -->
+<section id="offer" class="p-4">
+    <div class="offer-wrap">
+        <div class="offer-motif pct">%</div>
+        <div class="offer-motif tag">🏷️</div>
+
+        <div class="text-center relative z-10">
+            <span class="offer-badge font-eczar">🎁 Limited Time Safe Body Offer</span>
+            <h3 class="offer-title font-eczar">Special <span class="text-brand-primary">10% Discount</span> Available
+            </h3>
+            <p class="offer-sub font-eczar">सीमित समय के लिए — आज ही ऑर्डर करें</p>
+        </div>
+
+        <div class="offer-grid  relative z-10">
+            <div>
+                <div class="timer-row">
+                    <div id="offerCountdown" class="offer-timer font-eczar">
+                        <span class="offer-bell">🔔</span>
+                        <span class="time-text">00:00:00</span>
+                    </div>
+                    <div class="timeline-wrap" aria-hidden="true">
+                        <div id="offerProgress" class="timeline-bar"></div>
+                    </div>
+                </div>
+
+                <div class="feature-row">
+                    <div class="feature-chip"><span class="feature-ico">💳</span><span>Cash on Delivery</span></div>
+                    <div class="feature-chip"><span class="feature-ico">🚚</span><span>Fast Dispatch</span></div>
+                </div>
+
+                <div class="offer-cta">
+                    <button class="btn-offer font-eczar" onclick="scrollToContact()">Grab 10% OFF • Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gurenteed content  -->
+<section id="guarantee" class="px-4 py-8 max-[450px]:py-6 max-[450px]:px-3">
+    <div class="guarantee-section">
+        <!-- background motifs -->
+        <div class="refund-motif m1">↩</div>
+        <div class="refund-motif m2">₹</div>
+
+        <!-- badge + title -->
+        <div class="text-center relative z-10">
+            <span class="guarantee-badge font-eczar">
+                🛡️ 15-Day Satisfaction Assurance
+            </span>
+            <h3 class="guarantee-title font-eczar">15 दिनों तक बिना जोखिम ट्राय करें</h3>
+            <p class="guarantee-sub font-eczar">अगर आपको संतुष्टि न मिले, तो हमारी support team से संपर्क करें।</p>
+        </div>
+
+        <!-- optional bottle image -->
+        <div class="bottle-wrap mt-4 relative z-10">
+            <!-- Replace Image/bottle.png with your actual bottle image path -->
+            <img src="Image/bottle.png" alt="Product Bottle" class="bottle-img"
+                onerror="this.parentElement.style.display='none'">
+        </div>
+
+        <!-- promise points -->
+        <div class="promise-grid relative z-10">
+            <div class="promise-item">
+                <div class="icon-circle">🛡️</div>
+                <div>
+                    <p class="promise-text font-eczar">No Questions Asked Refund</p>
+                    <p class="promise-sub font-eczar">संतुष्टि न होने पर सरल रिफंड प्रक्रिया</p>
+                </div>
+            </div>
+            <div class="promise-item">
+                <div class="icon-circle">🔁</div>
+                <div>
+                    <p class="promise-text font-eczar">Risk‑Free 15 Days</p>
+                    <p class="promise-sub font-eczar">आसानी से ट्राय करें, पसंद न आए तो रिफंड ले लें</p>
+                </div>
+            </div>
+            <div class="promise-item">
+                <div class="icon-circle">🎧</div>
+                <div>
+                    <p class="promise-text font-eczar">Dedicated Support</p>
+                    <p class="promise-sub font-eczar">हमारी सपोर्ट टीम आपकी हर स्टेप पर साथ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA bar -->
+        <div class="guarantee-cta relative z-10">
+            <div class="guarantee-note font-eczar">आपका पैसा सुरक्षित है — 100% Satisfaction First</div>
+            <button class="btn-guarantee font-eczar" onclick="scrollToContact()">
+                ✅ Risk‑Free Try • Order Now
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- review section -->
+<section id="reviews" class="px-4 py-8 bg-white max-[450px]:py-6 max-[450px]:px-3">
+    <div class="text-center mb-6">
+        <span
+            class="inline-block bg-brand-light text-brand-primary font-eczar font-bold text-sm px-4 py-2 rounded-full mb-3 border border-brand-primary/30">
+            Real Customer Results
+        </span>
+        <h2 class="text-3xl max-[450px]:text-2xl font-eczar font-extrabold text-brand-accent">
+            Success Stories <span class="text-brand-primary">(Social Proof)</span>
+        </h2>
+        <div class="mx-auto mt-3 h-1.5 w-28 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full"></div>
+    </div>
+
+    <div class="review-grid">
+        <!-- Review 1 -->
+        <article class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">
+                    <img src="Image/Customer1.png" alt="सीमा देवी" class="w-full h-full object-cover">
+                </div>
+                <div class="review-info">
+                    <h4 class="font-eczar">सीमा देवी</h4>
+                    <div class="review-meta font-eczar">
+                        <span class="review-location">📍 दिल्ली</span>
+                        <span>•</span>
+                        <span>Age 25</span>
+                    </div>
+                    <div class="stars">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                </div>
+            </div>
+            <p class="review-text font-eczar">
+                "मुझे गाँठ कई सालों से थी। दर्द कम था इसलिए ध्यान नहीं दिया।
+                Gath Heal Capsule लेने के 3–4 हफ्तों में गाँठ नरम लगने लगी।
+                अब सूजन भी नहीं रहती और परेशानी नहीं है।"
+            </p>
+            <div class="review-footer">
+                <span class="platform-badge google">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                    </svg>
+                    Google Review
+                </span>
+                <span class="verified-badge">
+                    ✓ Verified Purchase
+                </span>
+            </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">
+                    <img src="Image/Customer2.png" alt="अशोक कुमार" class="w-full h-full object-cover">
+                </div>
+                <div class="review-info">
+                    <h4 class="font-eczar">अशोक कुमार</h4>
+                    <div class="review-meta font-eczar">
+                        <span class="review-location">📍 जयपुर</span>
+                        <span>•</span>
+                        <span>Age 52</span>
+                    </div>
+                    <div class="stars">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                </div>
+            </div>
+            <p class="review-text font-eczar">
+                "डॉक्टर ने कहा था कि अगर गाँठ बढ़ी तो ऑपरेशन करना पड़ेगा।
+                इस डर से Gath Heal Capsule शुरू किया।
+                कुछ ही हफ्तों में गाँठ का उभार कम होने लगा और दर्द भी शांत हो गया।"
+            </p>
+            <div class="review-footer">
+                <span class="platform-badge facebook">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                    Meta Review
+                </span>
+                <span class="verified-badge">
+                    ✓ Verified Purchase
+                </span>
+            </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">
+                    <img src="Image/Customer3.png" alt="रेखा शर्मा" class="w-full h-full object-cover">
+                </div>
+                <div class="review-info">
+                    <h4 class="font-eczar">रेखा शर्मा</h4>
+                    <div class="review-meta font-eczar">
+                        <span class="review-location">📍 भोपाल</span>
+                        <span>•</span>
+                        <span>Age 38</span>
+                    </div>
+                    <div class="stars">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                </div>
+            </div>
+            <p class="review-text font-eczar">
+                "लगातार इस्तेमाल से गाँठ का सख़्तपन कम हुआ और अब डर नहीं लगता।
+                मेरे लिए सबसे बड़ी राहत ये थी कि बिना सर्जरी समाधान मिला।"
+            </p>
+            <div class="review-footer">
+                <span class="platform-badge google">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                    </svg>
+                    Google Review
+                </span>
+                <span class="verified-badge">
+                    ✓ Verified Purchase
+                </span>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="p-4 bg-brand-primary text-white border-b-2 border-brand-light" id="contact">
+
+    <!-- Order Header -->
+    <div class="text-center mb-6 max-[450px]:mb-4">
+        <h2 class="text-2xl max-[450px]:text-xl font-semibold font-eczar mb-3 max-[450px]:mb-2">
+            🛡️ अपनी त्वचा को Gath Heal Care से से बचाइए।
+        </h2>
+        <p class="text-3xl max-[450px]:text-2xl font-eczar font-bold mb-2">
+            ⚡ 7–10 दिनों में असर महसूस करें।
+        </p>
+        <div class="mt-4 max-[450px]:mt-3">
+            <p
+                class="text-lg max-[450px]:text-base font-eczar font-bold text-white bg-gradient-to-r from-brand-primary to-brand-secondary px-4 py-3 rounded-lg shadow-xl ring-2 ring-white/60 max-[450px]:px-3 max-[450px]:py-2 animate-pulse">
+                <span class="block text-xl max-[450px]:text-lg font-extrabold">👉 अभी ऑर्डर करें</span>
+                <span class="block text-brand-light text-xl max-[450px]:text-lg font-semibold">और अपनी गाँठ
+                    की समस्या को जड़ से ठीक करने की ओर पहला कदम बढ़ाएँ।</span>
+            </p>
+            <p
+                class="text-3xl max-[450px]:text-2xl font-eczar font-extrabold text-brand-light mt-3 max-[450px]:mt-6 tracking-wide">
+                🛒 ORDER NOW
+            </p>
+        </div>
+    </div>
+
+    <form id="contactForm">
+        <div class="mb-4 max-[450px]:mb-3">
+            <label for="name"
+                class="block mb-2 text-2xl max-[450px]:text-xl text-white font-eczar font-semibold max-[450px]:mb-1">आपका
+                नाम:</label>
+            <input type="text" id="name" name="name" required placeholder="अपना नाम लिखें"
+                class="w-full p-3 border-none rounded text-lg font-bold text-brand-primary placeholder-brand-muted font-eczar max-[450px]:p-2 max-[450px]:text-base bg-brand-light">
+        </div>
+        <div class="mb-4 max-[450px]:mb-3">
+            <label for="phone"
+                class="block mb-2 text-2xl max-[450px]:text-xl text-white font-eczar font-semibold max-[450px]:mb-1">फोन
+                नंबर:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="अपना फोन नंबर लिखें"
+                class="w-full p-3 border-none rounded text-lg text-brand-primary  font-bold placeholder-brand-primary font-eczar max-[450px]:p-2 max-[450px]:text-base bg-brand-light">
+        </div>
+        <button type="submit"
+            class="bg-brand-light text-brand-primary font-bold border-none py-4 px-8 rounded text-2xl font-eczar cursor-pointer w-full mt-4 transition-all duration-300 hover:bg-opacity-90 max-[450px]:py-3 max-[450px]:px-4 max-[450px]:text-xl max-[450px]:mt-3"
+            onclick="showThankYou()">
+            <span>✨</span>
+            अभी ऑर्डर करें
+            <span>✨</span>
+        </button>
+    </form>
+</section>
+
+<!-- FAQ Section -->
+<section class="max-w-md mx-auto p-4">
+    <div class="text-center mb-8 relative">
+        <h2 class="text-[var(--brand-primary)] m-0 text-3xl font-bold relative inline-block font-arya">
+            अक्सर पूछे जाने वाले सवाल
+            <span
+                class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-15 h-1 bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-secondary)] rounded animate-pulse"></span>
+        </h2>
+    </div>
+
+    <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+        onclick="toggleFAQ(this)">
+        <div
+            class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+            <div class="flex items-center flex-1">
+                <div
+                    class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                    1
+                </div>
+                <span>क्या ये हर तरह की गाँठ में काम करता है?</span>
+            </div>
+            <div class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                🔽</div>
+        </div>
+        <div
+            class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+            <div
+                class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                <span class="mr-1 text-lg">✅</span>
+                <span class="text-[var(--accent)] font-semibold">हाँ, बिल्कुल!</span>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                    <li>फैटी/सॉफ्ट टिश्यू व लिपोमा में उपयोगी</li>
+                    <li>दर्दरहित, नियमित प्रयोग से असर दिखता है</li>
+                    <li>आकार व कठोरता धीरे-धीरे घटती है</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+        onclick="toggleFAQ(this)">
+        <div
+            class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+            <div class="flex items-center flex-1">
+                <div
+                    class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                    2
+                </div>
+                <span>रिज़ल्ट कब दिखता है?</span>
+            </div>
+            <div class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                🔽</div>
+        </div>
+        <div
+            class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+            <div
+                class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                <span class="mr-1 text-lg">⏰</span>
+                <span class="text-[var(--accent)] font-semibold">समयरेखा (औसत)</span>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                    <li>छोटी गाँठ: 2–3 हफ्ते</li>
+                    <li>सामान्य परिणाम: 3–6 हफ्ते</li>
+                    <li>पुरानी/बड़ी गाँठ: 6–8+ हफ्ते (निरंतरता रखें)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+        onclick="toggleFAQ(this)">
+        <div
+            class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+            <div class="flex items-center flex-1">
+                <div
+                    class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                    3
+                </div>
+                <span>क्या कोई साइड इफेक्ट हैं?</span>
+            </div>
+            <div class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                🔽</div>
+        </div>
+        <div
+            class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+            <div
+                class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                <span class="mr-1 text-lg">🌿</span>
+                <span class="text-[var(--accent)] font-semibold">आम तौर पर सुरक्षित</span>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                    <li>100% आयुर्वेदिक, स्टेरॉयड-फ्री</li>
+                    <li>कोई साइड इफेक्ट नहीं</li>
+                    <li>एलर्जी पर उपयोग रोकें और डॉक्टर से सलाह लें</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+        onclick="toggleFAQ(this)">
+        <div
+            class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+            <div class="flex items-center flex-1">
+                <div
+                    class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                    4
+                </div>
+                <span>पुरानी गाँठ में भी असर करेगा?</span>
+            </div>
+            <div class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                🔽</div>
+        </div>
+        <div
+            class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+            <div
+                class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                <span class="mr-1 text-lg">💪</span>
+                <span class="text-[var(--accent)] font-semibold">पुरानी गाँठ पर भी असर</span>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                    <li>समय अधिक लग सकता है (2–3 माह)</li>
+                    <li>नियमित उपयोग + हल्की मसाज से बेहतर परिणाम</li>
+                    <li>परिणाम धीरे-धीरे दिखाई देते हैं</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+        onclick="toggleFAQ(this)">
+        <div
+            class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+            <div class="flex items-center flex-1">
+                <div
+                    class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                    5
+                </div>
+                <span>दिन में कितनी बार लगाना है?</span>
+            </div>
+            <div class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                🔽</div>
+        </div>
+        <div
+            class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+            <div
+                class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                <span class="mr-1 text-lg">🕐</span>
+                <span class="text-[var(--accent)] font-semibold">उपयोग का तरीका</span>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                    <li>दिन में 2 बार, खाना खाने के बाद</li>
+                    <li>गुनगुने पानी के साथ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+        onclick="toggleFAQ(this)">
+        <div
+            class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+            <div class="flex items-center flex-1">
+                <div
+                    class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                    6
+                </div>
+                <span>क्या बच्चों के लिए सुरक्षित है?</span>
+            </div>
+            <div class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                🔽</div>
+        </div>
+        <div
+            class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+            <div
+                class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                <span class="mr-1 text-lg">👶</span>
+                <span class="text-[var(--accent)] font-semibold">बच्चों के लिए मार्गदर्शन</span>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                    <li> सभी उम्र के बच्चों के लिए सुरक्षित</li>
+                    <li>आँख / मुंह / घाव से दूर रखें</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
