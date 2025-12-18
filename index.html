@@ -365,7 +365,6 @@
         }
 
         header {
-            padding: 24px 0;
             text-align: center;
         }
 
@@ -1401,7 +1400,7 @@
 
         .steps-container {
             display: grid;
-            gap: 1rem;
+            /* gap: 1rem; */
         }
 
         .usage-step {
@@ -1573,7 +1572,7 @@
         }
 
         .usage-timeline {
-            margin: 1.5rem 0;
+            /* margin: 1.5rem 0; */
             background: #ffffff;
             border: 1px solid rgba(15, 23, 42, 0.06);
             border-radius: 16px;
@@ -3528,11 +3527,11 @@
             align-items: center;
             gap: 12px;
             background: linear-gradient(135deg, #FEF3C7, #FED7AA);
-            border: 1px solid rgba(245,158,11,0.3);
+            border: 1px solid rgba(245, 158, 11, 0.3);
             border-radius: 12px;
             padding: 1rem;
             margin-top: 5rem;
-            box-shadow: 0 4px 12px rgba(245,158,11,0.2);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
         }
 
         .urgency-icon {
@@ -3544,7 +3543,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
             animation: pulse 2s ease-in-out infinite;
         }
 
@@ -3603,8 +3602,1196 @@
             box-shadow: 0 14px 28px rgba(239, 68, 68, 0.4);
         }
     </style>
+    <style>
+        /* Product Introduction Section Styles */
+        .product-intro-section {
+            position: relative;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 50%, #f0fdfa 100%);
+            border: 1.5px solid rgba(15, 23, 42, 0.06);
+            border-radius: 18px;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            margin: 0.5rem 0;
+            max-width: 450px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-intro-section::before,
+        .product-intro-section::after {
+            content: '';
+            position: absolute;
+            inset: -40%;
+            background: radial-gradient(circle at 30% 20%, rgba(13, 148, 136, 0.08), transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(20, 184, 166, 0.06), transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.04), transparent 60%);
+            z-index: 0;
+            animation: backgroundFlow 15s ease-in-out infinite;
+        }
+
+        @keyframes backgroundFlow {
+
+            0%,
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(180deg) scale(1.1);
+            }
+        }
+
+        /* Background Motifs */
+        .intro-motif {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.08;
+            user-select: none;
+            font-size: 120px;
+            pointer-events: none;
+        }
+
+        .intro-motif.leaf-intro-motif {
+            top: -20px;
+            left: 5%;
+            color: #10B981;
+            transform: rotate(-25deg);
+            animation: floatGentle 8s ease-in-out infinite;
+        }
+
+        .intro-motif.heal-intro-motif {
+            top: 20%;
+            right: -10px;
+            color: var(--brand-primary);
+            transform: rotate(15deg);
+            animation: floatGentle 10s ease-in-out infinite reverse;
+        }
+
+        .intro-motif.clean-intro-motif {
+            bottom: 30%;
+            left: -15px;
+            color: #14B8A6;
+            transform: rotate(-10deg);
+            animation: sparkle 6s ease-in-out infinite;
+        }
+
+        .intro-motif.ayur-intro-motif {
+            bottom: -20px;
+            right: 15%;
+            color: var(--brand-secondary);
+            transform: rotate(30deg);
+            animation: floatGentle 12s ease-in-out infinite;
+        }
+
+        @keyframes floatGentle {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-25deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(-15deg);
+            }
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0.08;
+                transform: scale(1) rotate(-10deg);
+            }
+
+            50% {
+                opacity: 0.15;
+                transform: scale(1.1) rotate(0deg);
+            }
+        }
+
+        /* Healing Particles */
+        .healing-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .healing-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, var(--brand-primary), transparent);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+
+        .healing-particle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .healing-particle:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .healing-particle:nth-child(3) {
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .healing-particle:nth-child(4) {
+            top: 30%;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        .healing-particle:nth-child(5) {
+            top: 70%;
+            left: 50%;
+            animation-delay: 1s;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateY(-10px) scale(1);
+            }
+
+            80% {
+                opacity: 1;
+                transform: translateY(-40px) scale(1.2);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-60px) scale(0);
+            }
+        }
+
+        /* Badge */
+        .intro-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--brand-secondary), var(--brand-primary));
+            color: white;
+            font-weight: 900;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            position: relative;
+            z-index: 10;
+            margin-bottom: 2rem;
+            animation: badgePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 15px 35px rgba(13, 148, 136, 0.3);
+            }
+        }
+
+        /* Content Grid */
+        .intro-content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .product-glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, rgba(20, 184, 166, 0.08) 30%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        .product-image-frame {
+            position: relative;
+            z-index: 2;
+            padding: 0.5rem;
+        }
+
+        .product-hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.12));
+            transition: all 0.4s ease;
+            animation: productFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        @keyframes productFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-5px) rotate(1deg);
+            }
+
+            75% {
+                transform: translateY(-3px) rotate(-1deg);
+            }
+        }
+
+        .product-hero-image:hover {
+            transform: scale(1.03) rotate(1deg);
+            filter: drop-shadow(0 15px 30px rgba(13, 148, 136, 0.15));
+        }
+
+        /* Healing Rings */
+        .healing-rings {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .healing-ring {
+            position: absolute;
+            border: 2px solid var(--brand-primary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: ringPulse 3s ease-in-out infinite;
+        }
+
+        .healing-ring.ring-1 {
+            width: 220px;
+            height: 220px;
+            top: -110px;
+            left: -110px;
+            animation-delay: 0s;
+        }
+
+        .healing-ring.ring-2 {
+            width: 270px;
+            height: 270px;
+            top: -135px;
+            left: -135px;
+            animation-delay: 1s;
+        }
+
+        .healing-ring.ring-3 {
+            width: 320px;
+            height: 320px;
+            top: -160px;
+            left: -160px;
+            animation-delay: 2s;
+        }
+
+        @keyframes ringPulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Feature Indicators */
+        .feature-indicators {
+            position: absolute;
+            z-index: 3;
+        }
+
+        .feature-dot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+            font-weight: 900;
+            box-shadow: 0 6px 18px rgba(13, 148, 136, 0.4);
+            animation: featureBounce 4s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .feature-dot.ayurvedic-dot {
+            top: -15px;
+            right: 15px;
+            animation-delay: 0s;
+        }
+
+        .feature-dot.natural-dot {
+            top: 50%;
+            right: -15px;
+            animation-delay: 1s;
+        }
+
+        .feature-dot.effective-dot {
+            bottom: 5px;
+            right: 30px;
+            animation-delay: 2s;
+        }
+
+        .feature-dot:before {
+            content: '🌿';
+        }
+
+        .feature-dot.natural-dot:before {
+            content: '💚';
+        }
+
+        .feature-dot.effective-dot:before {
+            content: '⚡';
+        }
+
+        @keyframes featureBounce {
+
+            0%,
+            100% {
+                transform: scale(1) translateY(0);
+            }
+
+            50% {
+                transform: scale(1.08) translateY(-3px);
+            }
+        }
+
+        .feature-dot .tooltip {
+            position: absolute;
+            top: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .feature-dot:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Usage Visualization */
+        .usage-visual {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .usage-step-preview {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--brand-light), #F0FDFA);
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            border-radius: 25px;
+            padding: 8px 16px;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.1);
+        }
+
+        .mini-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .step-icon {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            animation: stepPulse 2s ease-in-out infinite;
+        }
+
+        .mini-step span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        .usage-arrow {
+            font-size: 0.8rem;
+            color: var(--brand-primary);
+            font-weight: 900;
+        }
+
+        @keyframes stepPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Product Description */
+        .product-description {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .intro-title {
+            margin: 0;
+            font-size: 1.6rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            color: var(--brand-accent);
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .intro-subtitle {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--brand-accent);
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .intro-subtitle {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--brand-accent);
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .title-highlight {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            height: 3rem;
+            padding: 8px;
+
+            display: inline-block;
+            animation: titleShine 3s ease-in-out infinite;
+        }
+
+        @keyframes titleShine {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+
+        .highlight-ayurvedic {
+            background: linear-gradient(135deg, #10B981, #059669);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* Benefits Visual List */
+        .benefits-visual-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .benefit-visual-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border: 1px solid rgba(13, 148, 136, 0.1);
+            border-radius: 14px;
+            padding: 0.8rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-visual-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.12);
+            border-color: var(--brand-primary);
+        }
+
+        .benefit-icon-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .benefit-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--brand-light), #F0FDFA);
+            border: 2px solid var(--brand-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .impact-ripple,
+        .cleanse-wave,
+        .soften-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+            border: 2px solid var(--brand-primary);
+            border-radius: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .impact-ripple {
+            animation: impactRipple 2s ease-out infinite;
+        }
+
+        .cleanse-wave {
+            animation: cleanseWave 2.5s ease-in-out infinite;
+            border-style: dashed;
+        }
+
+        .soften-pulse {
+            animation: softenPulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes impactRipple {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes cleanseWave {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.3) rotate(180deg);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes softenPulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.3;
+            }
+        }
+
+        .benefit-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--brand-accent);
+            line-height: 1.4;
+        }
+
+        .benefit-text strong {
+            color: var(--brand-primary);
+            font-weight: 800;
+        }
+
+        /* Trust Elements */
+        .trust-elements {
+            margin: 0.8rem 0;
+        }
+
+        .trust-badge-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .trust-mini-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            color: white;
+            padding: 5px 10px;
+            border-radius: 18px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+            animation: trustBadgePulse 4s ease-in-out infinite;
+        }
+
+        .trust-mini-badge:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .trust-mini-badge:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .trust-mini-badge:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        @keyframes trustBadgePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .trust-icon {
+            font-size: 0.9rem;
+        }
+
+        /* Process Preview */
+        .process-preview {
+            background: linear-gradient(135deg, var(--brand-light), #F0FDFA);
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            border-radius: 14px;
+            padding: 1.2rem;
+        }
+
+        .process-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--brand-accent);
+        }
+
+        .process-icon {
+            font-size: 1.1rem;
+        }
+
+        .virtual-process {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .process-stage {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .stage-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            min-width: 70px;
+        }
+
+        .stage-visual:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.15);
+        }
+
+        .problem-visual,
+        .healing-visual,
+        .result-visual {
+            font-size: 1.3rem;
+            animation: stageAnimation 3s ease-in-out infinite;
+        }
+
+        .problem-visual {
+            animation-delay: 0s;
+        }
+
+        .healing-visual {
+            animation-delay: 1s;
+        }
+
+        .result-visual {
+            animation-delay: 2s;
+        }
+
+        @keyframes stageAnimation {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .stage-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            text-align: center;
+        }
+
+        .process-flow-arrow {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .flow-line {
+            width: 25px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+            border-radius: 1px;
+        }
+
+        .flow-icon {
+            font-size: 0.7rem;
+            color: var(--brand-primary);
+            animation: flowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes flowPulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* CTA Preview */
+        .intro-cta-preview {
+            display: flex;
+            justify-content: center;
+            /* margin-top: 1.5rem; */
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-hint {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #FEF3C7, #FED7AA);
+            border: 1px dashed rgba(245, 158, 11, 0.4);
+            border-radius: 10px;
+            padding: 10px 16px;
+            animation: ctaHintBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes ctaHintBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .hint-icon {
+            font-size: 1.3rem;
+            animation: pointDown 2s ease-in-out infinite;
+        }
+
+        @keyframes pointDown {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(4px);
+            }
+        }
+
+        .hint-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #92400e;
+            text-align: center;
+        }
+
+        .hint-arrow {
+            font-size: 1.1rem;
+            color: #D97706;
+            font-weight: 900;
+            animation: arrowBounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes arrowBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(6px);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments - Remove mobile specific overrides */
+
+        /* Usage Steps Section - Separate CSS */
+        .usage-steps-timeline {
+            position: relative;
+            width: 100%;
+
+        }
+
+        .usage-timeline-container {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .usage-progress-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+            border-radius: 15px;
+            transform: translateX(-100%);
+            animation: usageProgressFill 8s ease-in-out infinite;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.4);
+        }
+
+        @keyframes usageProgressFill {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            40% {
+                transform: translateX(0%);
+            }
+
+            60% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .usage-markers-container {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 8px;
+            z-index: 2;
+        }
+
+        .usage-day-marker {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--brand-primary);
+        }
+
+        .usage-day-number {
+            position: static;
+            background: white;
+            border: 2px solid var(--brand-primary);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(13, 148, 136, 0.2);
+        }
+
+        .usage-day-marker:hover .usage-day-number {
+            background: var(--brand-primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .usage-timeline-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.75rem;
+            color: var(--brand-secondary);
+            font-weight: 600;
+        }
+
+        .usage-timeline-label {
+            text-align: center;
+            flex: 1;
+        }
+
+        /* Usage Step Cards Enhancement */
+        .usage-step-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            border: 2px solid var(--brand-light);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usage-step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--brand-primary);
+        }
+
+        .usage-step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .usage-step-card:hover::before {
+            left: 100%;
+        }
+
+        .usage-step-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .usage-step-number {
+            background: var(--brand-primary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .usage-step-icon {
+            font-size: 1.5rem;
+            animation: usageIconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes usageIconBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .usage-step-content {
+            flex: 1;
+        }
+
+        .usage-step-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-bottom: 5px;
+        }
+
+        .usage-step-desc {
+            font-size: 0.9rem;
+            color: var(--brand-secondary);
+            font-weight: 500;
+        }
+
+        /* Mobile Responsive for Usage Steps */
+        @media (max-width: 450px) {
+            .usage-step-card {
+                padding: 15px;
+                margin-bottom: 12px;
+            }
+
+            .usage-step-header {
+                gap: 12px;
+            }
+
+            .usage-step-number {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            .usage-step-icon {
+                font-size: 1.3rem;
+            }
+
+            .usage-step-title {
+                font-size: 1rem;
+            }
+
+            .usage-step-desc {
+                font-size: 0.8rem;
+            }
+
+            .usage-day-number {
+                width: 22px;
+                height: 22px;
+                font-size: 0.6rem;
+            }
+
+            .usage-timeline-labels {
+                font-size: 0.6rem;
+            }
+        }
     </style>
-    <!-- Enables quick theme switching using data-theme palettes -->
 </head>
 
 <body data-theme="teal" class="font-eczar leading-relaxed text-brand-accent transition-all duration-500"
@@ -3612,41 +4799,34 @@
 
     <div class="w-full main-container">
         <!-- Header -->
-        <header class="text-white w-full max-w-[450px] md:max-w-[900px] mx-auto overflow-hidden "
+        <!-- Simplified Header -->
+        <header class="text-white w-full max-w-[450px] md:max-w-[450px] overflow-hidden relative"
             style="background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); border-bottom: 3px solid rgba(255,255,255,0.25); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);">
-            <div class="flex items-center justify-between gap-4 p-4 max-[450px]:items-center max-[450px]:gap-3">
-                <!-- Brand Row -->
-                <div class="flex items-center justify-center gap-3 flex-1">
-                    <div
-                        class="creative-logo w-12 h-12 max-[450px]:w-10 max-[450px]:h-10 rounded-full flex items-center justify-center border-2 border-white border-opacity-30 overflow-visible">
-                        <!-- Central Healing Symbol -->
-                        <div class="divider-symbol w-12 h-12 max-[450px]:w-10 max-[450px]:h-10">
-                            <span class="text-white text-lg max-[450px]:text-base filter drop-shadow-sm">🌿</span>
-                            <div class="divider-ripple"></div>
-                            <div class="divider-ripple"></div>
-                            <div class="divider-ripple"></div>
-                        </div>
-                        <div class="healing-glow">
-                            <div class="glow-ring"></div>
-                            <div class="glow-ring"></div>
-                            <div class="glow-ring"></div>
-                        </div>
-                    </div>
-                    <div
-                        class="font-eczar font-bold text-white drop-shadow-lg text-center leading-tight transition-transform duration-300 text-2xl max-[450px]:text-xl">
-                        <div class="flex items-center justify-center gap-1 hover:scale-105">
+            
+            <!-- Main Header Content -->
+            <div class="flex items-center justify-between gap-4 p-4">
+                <!-- Brand Section -->
+                <div class="flex items-center gap-3 flex-1">           
+                    <!-- Brand Name -->
+                    <div class="font-eczar font-bold text-white drop-shadow-lg">
+                        <div class="text-2xl leading-tight">
                             <span class="whitespace-nowrap">Gath Heal</span>
-                            <span class="whitespace-nowrap">Care</span>
+                            <span class="whitespace-nowrap ml-2">Capsule</span>
+                        </div>
+                        <div class="text-sm font-medium opacity-90 -mt-1">
+                            प्राकृतिक गाँठ का समाधान
                         </div>
                     </div>
                 </div>
-                <!-- CTA Button -->
-                <div class="flex-1 flex justify-center max-[450px]:justify-end">
-                    <button
-                        class="text-white font-bold border-none px-5 py-3 rounded-lg text-base max-[450px]:w-full cursor-pointer transition-all duration-300 hover:scale-105"
-                        onclick="scrollToContact()"
-                        style="background: linear-gradient(135deg, var(--brand-secondary), var(--brand-primary)); border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                        <span class="relative z-10">🛒 ऑर्डर करें</span>
+                
+                <!-- Order Now Button -->
+                <div class="flex-shrink-0">
+                    <button class="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-800 font-black px-6 py-3 rounded-xl text-base shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-white/30"
+                        onclick="scrollToContact()">
+                        <div class="flex items-center gap-2">
+                            <span class="animate-bounce">🛒</span>
+                            <span>Order Now</span>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -3654,7 +4834,1679 @@
         <!-- Main Content -->
         <main style="background: transparent;">
 
-         
+            <!-- Hook Section -->
+            <section
+                class="hook-section relative w-full max-w-[450px] mx-auto overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 border border-red-100 rounded-xl shadow-2xl mb-4">
+                <!-- Background Visualization Elements -->
+                <div class="absolute inset-0 overflow-hidden">
+                    <!-- Problem Indicators -->
+                    <div
+                        class="problem-indicator absolute top-4 left-4 w-8 h-8 bg-red-400 rounded-full opacity-20 animate-pulse">
+                    </div>
+                    <div
+                        class="problem-indicator absolute top-12 right-8 w-6 h-6 bg-orange-400 rounded-full opacity-25 animate-bounce">
+                    </div>
+                    <div
+                        class="problem-indicator absolute bottom-16 left-8 w-10 h-10 bg-red-300 rounded-full opacity-15 animate-pulse delay-1000">
+                    </div>
+
+                    <!-- Blockage Visualization -->
+                    <div class="blockage-visual absolute top-8 right-4">
+                        <div class="w-12 h-2 bg-red-200 rounded-full opacity-30"></div>
+                        <div class="w-8 h-2 bg-red-300 rounded-full opacity-40 mt-1 ml-2"></div>
+                        <div class="w-6 h-2 bg-red-400 rounded-full opacity-50 mt-1 ml-4 animate-pulse"></div>
+                    </div>
+
+                    <!-- Solution Flow Arrows -->
+                    <div class="solution-flow absolute bottom-4 right-4 flex items-center gap-1 opacity-20">
+                        <div class="w-2 h-0.5 bg-teal-400 animate-pulse"></div>
+                        <div class="text-teal-400 text-xs">→</div>
+                        <div class="w-2 h-0.5 bg-teal-500 animate-pulse delay-300"></div>
+                        <div class="text-teal-500 text-xs">→</div>
+                        <div class="w-2 h-0.5 bg-teal-600 animate-pulse delay-500"></div>
+                    </div>
+
+                    <!-- Floating Warning Icons -->
+                    <div class="warning-float absolute top-20 left-2 text-red-400 opacity-30 animate-bounce text-xl">⚠️
+                    </div>
+                    <div
+                        class="warning-float absolute bottom-24 right-2 text-orange-400 opacity-25 animate-pulse text-lg">
+                        🔴</div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="hero-image-container bg-brand-light relative z-10 w-full">
+                    <img src="./Image/Hero1.png" alt="Gath Heal Hero"
+                        class="w-full h-auto object-cover rounded-t-xl filter drop-shadow-lg">
+
+                    <!-- Image Overlay Effects -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-t-xl">
+                    </div>
+
+                    <!-- Problem Visualization Overlay -->
+                    <div
+                        class="absolute top-4 left-4 bg-red-500/80 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">
+                        समस्या
+                    </div>
+
+                    <!-- Solution Hint -->
+                    <div
+                        class="absolute bottom-4 right-4 bg-teal-500/80 text-white px-2 py-1 rounded-full text-xs font-bold animate-bounce">
+                        समाधान ↓
+                    </div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="content-section relative z-10 p-6 bg-brand-light">
+                    <!-- Warning Badge -->
+                    <div
+                        class="warning-badge inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1.5 rounded-full text-sm font-bold mb-4 shadow-lg animate-pulse">
+                        <span class="text-base">⚠️</span>
+                        <span>चेतावनी</span>
+                    </div>
+
+                    <!-- Main Hook Content -->
+                    <div class="hook-content space-y-4">
+                        <!-- Problem Statement -->
+                        <div class="problem-statement relative">
+                            <h2 class="text-xl font-black text-red-700 leading-tight mb-3">
+                                गाँठ बाहर से छोटी दिख सकती है,
+                            </h2>
+
+                            <!-- Visual Problem Indicator -->
+                            <div
+                                class="problem-visual flex items-center gap-3 bg-red-100 border-l-4 border-red-500 p-3 rounded-r-lg mb-4">
+                                <div class="relative">
+                                    <div class="w-8 h-8 bg-red-400 rounded-full animate-pulse"></div>
+                                    <div
+                                        class="absolute inset-0 w-8 h-8 bg-red-600 rounded-full animate-ping opacity-30">
+                                    </div>
+                                </div>
+                                <p class="text-red-800 font-bold text-sm">
+                                    लेकिन उसके अंदर सूजन, गंदगी और ब्लॉकेज चुपचाप बढ़ता रहता है।
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Solution Statement -->
+                        <div class="solution-statement relative">
+                            <!-- Solution Visual Process -->
+                            <div
+                                class="solution-process bg-gradient-to-r from-teal-50 to-emerald-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <div class="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
+                                        <span class="text-white text-xs font-bold">✓</span>
+                                    </div>
+                                    <h3 class="text-teal-700 font-bold text-lg">समाधान</h3>
+                                </div>
+
+                                <p class="text-teal-800 font-bold text-base leading-relaxed">
+                                    समय रहते शरीर को अंदर से साफ़ करना ही सबसे सुरक्षित रास्ता है।
+                                </p>
+
+                                <!-- Process Visualization -->
+                                <div class="process-viz flex items-center justify-between mt-4 gap-2">
+                                    <div class="process-step flex flex-col items-center">
+                                        <div
+                                            class="w-10 h-10 bg-red-200 rounded-full flex items-center justify-center mb-1 relative">
+                                            <span class="text-red-600 text-sm">🔴</span>
+                                            <div
+                                                class="absolute inset-0 bg-red-400 rounded-full animate-ping opacity-30">
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-red-600 font-bold text-center">समस्या</span>
+                                    </div>
+
+                                    <div class="arrow flex items-center gap-1">
+                                        <div class="w-3 h-0.5 bg-teal-400 animate-pulse"></div>
+                                        <span class="text-teal-500 animate-pulse">→</span>
+                                        <div class="w-3 h-0.5 bg-teal-500 animate-pulse delay-200"></div>
+                                    </div>
+
+                                    <div class="process-step flex flex-col items-center">
+                                        <div
+                                            class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center mb-1 relative">
+                                            <span class="text-teal-600 text-sm">💊</span>
+                                            <div
+                                                class="absolute inset-0 bg-teal-300 rounded-full animate-pulse opacity-40">
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-teal-600 font-bold text-center">उपचार</span>
+                                    </div>
+
+                                    <div class="arrow flex items-center gap-1">
+                                        <div class="w-3 h-0.5 bg-emerald-400 animate-pulse delay-300"></div>
+                                        <span class="text-emerald-500 animate-pulse delay-300">→</span>
+                                        <div class="w-3 h-0.5 bg-emerald-500 animate-pulse delay-500"></div>
+                                    </div>
+
+                                    <div class="process-step flex flex-col items-center">
+                                        <div
+                                            class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mb-1 relative">
+                                            <span class="text-emerald-600 text-sm">✨</span>
+                                            <div
+                                                class="absolute inset-0 bg-emerald-300 rounded-full animate-pulse opacity-40 delay-500">
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-emerald-600 font-bold text-center">स्वस्थता</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Problem Check Section -->
+                        <div class="problem-check-section relative">
+                            <div
+                                class="check-prompt bg-gradient-to-r from-orange-100 to-red-100 border-l-4 border-orange-500 p-4 rounded-r-lg">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <div class="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                                        <span class="text-white text-xs font-bold">?</span>
+                                    </div>
+                                    <h3 class="text-orange-700 font-bold text-lg">जांच करें</h3>
+                                </div>
+
+                                <p class="text-orange-800 font-bold text-base leading-relaxed">
+                                    क्या आपको नीचे दिखाई गई समस्याओं में से कोई परेशान कर रही है?
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Action Prompt -->
+                        <div class="action-prompt text-center pt-4">
+                            <div
+                                class="urgency-indicator bg-gradient-to-r from-orange-400 to-red-500 text-white px-4 py-2 rounded-full inline-flex items-center gap-2 shadow-lg animate-bounce">
+                                <span class="animate-pulse">⏰</span>
+                                <span class="font-bold text-sm">अभी जानें कैसे करें सफाई</span>
+                                <span class="animate-bounce">↓</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Glow Effect -->
+                <div
+                    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-gradient-to-t from-teal-200/50 to-transparent blur-lg">
+                </div>
+            </section>
+
+            <!-- Product Introduction section  -->
+            <section class="product-intro-section">
+                <!-- Background Motifs -->
+                <div class="intro-motif leaf-intro-motif">🌿</div>
+                <div class="intro-motif heal-intro-motif">💚</div>
+                <div class="intro-motif clean-intro-motif">✨</div>
+                <div class="intro-motif ayur-intro-motif">🕉️</div>
+
+                <!-- Floating Background Elements -->
+                <div class="healing-particles">
+                    <div class="healing-particle"></div>
+                    <div class="healing-particle"></div>
+                    <div class="healing-particle"></div>
+                    <div class="healing-particle"></div>
+                    <div class="healing-particle"></div>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="intro-title">
+                    <span class="title-highlight">🌿 पेश है — Gath Heal Capsule</span>
+                </h1>
+
+                <!-- Subtitle with Animation -->
+                <h2 class="intro-subtitle">
+                    एक <span class="highlight-ayurvedic">100% Ayurvedic support</span> जो
+                </h2>
+
+                <!-- Main Content Grid -->
+                <div class="intro-content-grid">
+                    <!-- Product Showcase First -->
+                    <div class="product-showcase">
+                        <!-- Product Glow Effect -->
+                        <div class="product-glow-effect"></div>
+
+                        <!-- Product Image Container -->
+                        <div class="product-image-frame">
+                            <img src="./Image/Intro2.png" alt="Gath Heal Capsule" class="product-hero-image">
+                            <!-- Interactive Healing Rings -->
+                            <div class="healing-rings">
+                                <div class="healing-ring ring-1"></div>
+                                <div class="healing-ring ring-2"></div>
+                                <div class="healing-ring ring-3"></div>
+                            </div>
+                        </div>
+
+                        <!-- Usage Visualization -->
+                        <div class="usage-visual">
+                            <div class="usage-step-preview">
+                                <div class="mini-step">
+                                    <div class="step-icon">💊</div>
+                                    <span>Take</span>
+                                </div>
+                                <div class="usage-arrow">→</div>
+                                <div class="mini-step">
+                                    <div class="step-icon">💧</div>
+                                    <span>Absorb</span>
+                                </div>
+                                <div class="usage-arrow">→</div>
+                                <div class="mini-step">
+                                    <div class="step-icon">✨</div>
+                                    <span>Heal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Description Below Image -->
+                    <div class="product-description">
+
+
+                        <!-- Key Benefits with Visualization -->
+                        <div class="benefits-visual-list">
+                            <div class="benefit-visual-item">
+                                <div class="benefit-icon-container">
+                                    <div class="benefit-icon">🎯</div>
+                                    <div class="impact-ripple"></div>
+                                </div>
+                                <span class="benefit-text">गाँठ, सूजन और ब्लॉकेज की <strong>जड़ पर काम करता
+                                        है</strong></span>
+                            </div>
+
+                            <div class="benefit-visual-item">
+                                <div class="benefit-icon-container">
+                                    <div class="benefit-icon">🌊</div>
+                                    <div class="cleanse-wave"></div>
+                                </div>
+                                <span class="benefit-text">ताकि शरीर <strong>अंदर से साफ़ हो</strong></span>
+                            </div>
+
+                            <div class="benefit-visual-item">
+                                <div class="benefit-icon-container">
+                                    <div class="benefit-icon">💆</div>
+                                    <div class="soften-pulse"></div>
+                                </div>
+                                <span class="benefit-text">और गाँठ <strong>धीरे-धीरे नरम पड़े</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Trust Elements -->
+                        <div class="trust-elements">
+                            <div class="trust-badge-row">
+                                <div class="trust-mini-badge">
+                                    <span class="trust-icon">🏆</span>
+                                    <span class="trust-label">Proven Formula</span>
+                                </div>
+                                <div class="trust-mini-badge">
+                                    <span class="trust-icon">🌿</span>
+                                    <span class="trust-label">100% Natural</span>
+                                </div>
+                                <div class="trust-mini-badge">
+                                    <span class="trust-icon">⚡</span>
+                                    <span class="trust-label">Fast Acting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="intro-cta-preview">
+                        <div class="cta-hint">
+                            <span class="hint-icon">👇</span>
+                            <span class="hint-text">नीचे जानें — यह कैसे आपकी समस्या का समाधान करता है|</span>
+                            <span class="hint-arrow">↓</span>
+                        </div>
+                    </div>
+            </section>
+
+            <!-- Problem Detailing Section -->
+            <section class="problem-section max-w-[450px] md:max-w-[450px] mx-auto p-4">
+                <!-- Background Motifs -->
+                <div class="problem-motif warning-motif">⚠️</div>
+                <div class="problem-motif pain-motif">😰</div>
+                <div class="problem-motif block-motif">🚫</div>
+                <div class="problem-motif danger-motif">⛔</div>
+
+                <!-- Section Badge -->
+                <div class="text-center mb-4">
+                    <div class="problem-badge">
+                        <span>⚠️</span>
+                        <span>Problem Cause</span>
+                    </div>
+                </div>
+
+                <!-- Section Title -->
+                <h2 class="problem-title">Pain Detailing</h2>
+                <p class="problem-subtitle">अधिकतर लोग गाँठ को तब तक नज़रअंदाज़ करते हैं जब तक दर्द बहुत ज़्यादा न हो
+                    जाए</p>
+
+                <!-- Warning Message -->
+                <div class="warning-message">
+                    <div class="warning-icon">🔔</div>
+                    <div class="warning-text">
+                        <h3>इस बीच शरीर के अंदर ये समस्याएँ बढ़ती रहती हैं:</h3>
+                    </div>
+                </div>
+
+                <!-- Problem Progression -->
+                <div class="problems-container">
+                    <!-- Problem 1 -->
+                    <div class="problem-step">
+                        <div class="problem-visual">
+                            <div class="problem-image-container">
+                                <img src="./Image/Problem1.png" alt="Lump formation" class="problem-image">
+                            </div>
+                            <div class="problem-number-badge">1</div>
+                        </div>
+
+                        <div class="problem-details">
+                            <h3 class="problem-heading">गाँठ बनना</h3>
+                            <p class="problem-description">शरीर में छोटी या बड़ी गाँठ बनना</p>
+
+                            <div class="severity-indicator">
+                                <div class="severity-bars">
+                                    <div class="severity-bar active"></div>
+                                    <div class="severity-bar"></div>
+                                    <div class="severity-bar"></div>
+                                </div>
+                                <span class="severity-label">प्रारंभिक चरण</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progression-arrow">⬇️</div>
+
+                    <!-- Problem 2 -->
+                    <div class="problem-step">
+                        <div class="problem-visual">
+                            <div class="problem-image-container">
+                                <img src="./Image/Problem2.png" alt="Heaviness and tension" class="problem-image">
+                            </div>
+                            <div class="problem-number-badge">2</div>
+                        </div>
+
+                        <div class="problem-details">
+                            <h3 class="problem-heading">भारीपन महसूस होना</h3>
+                            <p class="problem-description">गाँठ में भारीपन और अंदर खिंचाव</p>
+
+                            <div class="severity-indicator">
+                                <div class="severity-bars">
+                                    <div class="severity-bar active"></div>
+                                    <div class="severity-bar active"></div>
+                                    <div class="severity-bar"></div>
+                                </div>
+                                <span class="severity-label">बढ़ता दर्द</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progression-arrow">⬇️</div>
+
+                    <!-- Problem 3 -->
+                    <div class="problem-step">
+                        <div class="problem-visual">
+                            <div class="problem-image-container">
+                                <img src="./Image/Problem3.png" alt="Pain and burning" class="problem-image">
+                            </div>
+                            <div class="problem-number-badge">3</div>
+                        </div>
+
+                        <div class="problem-details">
+                            <h3 class="problem-heading">दर्द और जलन</h3>
+                            <p class="problem-description">गाँठ को दबाने पर दर्द या जलन महसूस होना</p>
+
+                            <div class="severity-indicator">
+                                <div class="severity-bars">
+                                    <div class="severity-bar active"></div>
+                                    <div class="severity-bar active"></div>
+                                    <div class="severity-bar active"></div>
+                                </div>
+                                <span class="severity-label">गंभीर स्तर</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progression-arrow">⬇️</div>
+
+                    <!-- Problem 4 -->
+                    <div class="problem-step">
+                        <div class="problem-visual">
+                            <div class="problem-image-container">
+                                <img src="./Image/Problem4.png" alt="Numbness and tingling" class="problem-image">
+                            </div>
+                            <div class="problem-number-badge">4</div>
+                        </div>
+
+                        <div class="problem-details">
+                            <h3 class="problem-heading">सुन्नपन की समस्या</h3>
+                            <p class="problem-description">बार-बार सुन्नपन या झनझनाहट</p>
+
+                            <div class="severity-indicator">
+                                <div class="severity-bars">
+                                    <div class="severity-bar active danger"></div>
+                                    <div class="severity-bar active danger"></div>
+                                    <div class="severity-bar active danger"></div>
+                                </div>
+                                <span class="severity-label">खतरनाक स्तर</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progression-arrow">⬇️</div>
+
+                    <!-- Problem 5 -->
+                    <div class="problem-step">
+                        <div class="problem-visual">
+                            <div class="problem-image-container">
+                                <img src="./Image/Problem5.png" alt="Blockage increase" class="problem-image">
+                            </div>
+                            <div class="problem-number-badge">5</div>
+                        </div>
+
+                        <div class="problem-details">
+                            <h3 class="problem-heading">ब्लॉकेज बढ़ना</h3>
+                            <p class="problem-description">गाँठ के अंदर गंदगी और ब्लॉकेज बढ़ना</p>
+
+                            <div class="severity-indicator">
+                                <div class="severity-bars">
+                                    <div class="severity-bar active critical"></div>
+                                    <div class="severity-bar active critical"></div>
+                                    <div class="severity-bar active critical"></div>
+                                </div>
+                                <span class="severity-label">अत्यंत गंभीर</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alert Message -->
+                <div class="alert-message">
+                    <div class="alert-icon">👉</div>
+                    <div class="alert-content">
+                        <h4 class="alert-title">महत्वपूर्ण चेतावनी</h4>
+                        <p class="alert-text">ये संकेत बताते हैं कि सूजन और ब्लॉकेज अंदर गहराई तक पहुँच चुका है।</p>
+                    </div>
+                </div>
+
+                <!-- Progression Timeline -->
+                <div class="problem-timeline">
+                    <h4 class="timeline-title">समस्या की गंभीरता का समयरेखा</h4>
+
+                    <div class="timeline-track">
+                        <div class="timeline-severity" id="severityProgress"></div>
+
+                        <div class="timeline-stages">
+                            <div class="timeline-stage" data-stage="1">
+                                <div class="stage-dot mild"></div>
+                                <div class="stage-label">शुरुआत</div>
+                                <div class="stage-desc">हल्की गाँठ</div>
+                            </div>
+
+                            <div class="timeline-stage" data-stage="2">
+                                <div class="stage-dot moderate"></div>
+                                <div class="stage-label">मध्यम</div>
+                                <div class="stage-desc">दर्द शुरू</div>
+                            </div>
+
+                            <div class="timeline-stage" data-stage="3">
+                                <div class="stage-dot severe"></div>
+                                <div class="stage-label">गंभीर</div>
+                                <div class="stage-desc">तेज़ दर्द</div>
+                            </div>
+
+                            <div class="timeline-stage" data-stage="4">
+                                <div class="stage-dot critical"></div>
+                                <div class="stage-label">अत्यंत गंभीर</div>
+                                <div class="stage-desc">खतरनाक स्तर</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Urgency Section -->
+                    <div class="urgency-message">
+                        <div class="urgency-icon">⚡</div>
+                        <div class="urgency-content">
+                            <h5 class="urgency-title">समय सीमा चेतावनी</h5>
+                            <p class="urgency-text">देर न करें! आज ही ऑर्डर करके अपनी समस्या का समाधान पाएं</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="problem-cta">
+                    <p class="problem-cta-text">समस्या बढ़ने से पहले रोकथाम जरूरी है!</p>
+                    <button class="btn-problem" onclick="scrollToContact()">
+                        <span>🚨</span>
+                        <span>तुरंत समाधान पाएं</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="how-it-works-section max-w-[450px] md:max-w-[900px] mx-auto px-4 py-6 md:py-8">
+                <!-- Background Motifs -->
+                <div class="work-motif gear-motif">⚙️</div>
+                <div class="work-motif flow-motif">🌊</div>
+                <div class="work-motif clean-motif">✨</div>
+                <div class="work-motif heal-motif">🔬</div>
+
+                <!-- Section Badge -->
+                <div class="text-center mb-4">
+                    <div class="work-badge">
+                        <span>🔬</span>
+                        <span>How It Works</span>
+                    </div>
+                </div>
+
+                <!-- Section Title -->
+                <h2 class="work-title">Mechanism of Action</h2>
+                <p class="work-subtitle">Gath Heal Capsule शरीर में 5 तरीकों से काम करता है</p>
+
+                <!-- Mechanism Flow -->
+                <div class="mechanism-container">
+                    <!-- Step 1 -->
+                    <div class="mechanism-step">
+                        <div class="step-visual">
+                            <div class="solve-image-container">
+                                <img src="./Image/Solve1.png" alt="Loosens toxins" class="solve-image">
+                            </div>
+                            <div class="step-number-badge">1</div>
+                        </div>
+
+                        <div class="step-details">
+                            <h3 class="step-heading">टॉक्सिन को ढीला करता है</h3>
+                            <p class="step-description">गाँठ के अंदर जमी गंदगी और टॉक्सिन को ढीला करता है</p>
+
+                            <div class="mechanism-visual">
+                                <div class="toxin-particles">
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                </div>
+                                <div class="action-arrow">→</div>
+                                <div class="clean-state">✨</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">⬇️</div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="mechanism-step">
+                        <div class="step-visual">
+                            <div class="solve-image-container">
+                                <img src="./Image/Solve2.png" alt="Reduces inflammation" class="solve-image">
+                            </div>
+                            <div class="step-number-badge">2</div>
+                        </div>
+
+                        <div class="step-details">
+                            <h3 class="step-heading">सूजन को शांत करता है</h3>
+                            <p class="step-description">सूजन और अंदरूनी तनाव को शांत करता है</p>
+
+                            <div class="mechanism-visual">
+                                <div class="inflammation-indicator">🔥</div>
+                                <div class="action-arrow">→</div>
+                                <div class="calm-state">💚</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">⬇️</div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="mechanism-step">
+                        <div class="step-visual">
+                            <div class="solve-image-container">
+                                <img src="./Image/Solve3.png" alt="Softens lumps" class="solve-image">
+                            </div>
+                            <div class="step-number-badge">3</div>
+                        </div>
+
+                        <div class="step-details">
+                            <h3 class="step-heading">गाँठ को मुलायम बनाता है</h3>
+                            <p class="step-description">गाँठ को धीरे-धीरे मुलायम बनाता है</p>
+
+                            <div class="mechanism-visual">
+                                <div class="hard-lump">🔴</div>
+                                <div class="action-arrow">→</div>
+                                <div class="soft-tissue">🟢</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">⬇️</div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="mechanism-step">
+                        <div class="step-visual">
+                            <div class="solve-image-container">
+                                <img src="./Image/Solve4.png" alt="Improves blood flow" class="solve-image">
+                            </div>
+                            <div class="step-number-badge">4</div>
+                        </div>
+
+                        <div class="step-details">
+                            <h3 class="step-heading">ब्लड फ्लो बेहतर करता है</h3>
+                            <p class="step-description">ब्लड फ्लो और नैचुरल सर्कुलेशन बेहतर करता है</p>
+
+                            <div class="mechanism-visual">
+                                <div class="blood-flow">
+                                    <div class="flow-line"></div>
+                                    <div class="flow-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">⬇️</div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="mechanism-step">
+                        <div class="step-visual">
+                            <div class="solve-image-container">
+                                <img src="./Image/Solve5.png" alt="Body detox" class="solve-image">
+                            </div>
+                            <div class="step-number-badge">5</div>
+                        </div>
+
+                        <div class="step-details">
+                            <h3 class="step-heading">शरीर को डिटॉक्स करता है</h3>
+                            <p class="step-description">शरीर को अंदर से detox करता है</p>
+
+                            <div class="mechanism-visual">
+                                <div class="body-detox">
+                                    <div class="detox-wave"></div>
+                                    <div class="detox-wave"></div>
+                                    <div class="detox-wave"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Box -->
+                <div class="mechanism-summary">
+                    <div class="summary-icon">🎯</div>
+                    <div class="summary-content">
+                        <h4 class="summary-title">Complete Natural Healing</h4>
+                        <p class="summary-text">ये सभी 5 steps एक साथ मिलकर आपकी गाँठ को प्राकृतिक रूप से ठीक करते हैं
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Visualization -->
+                <div class="healing-timeline">
+                    <h4 class="timeline-title">Healing Process Timeline</h4>
+
+                    <div class="timeline-track">
+                        <div class="timeline-progress" id="healingProgress"></div>
+
+                        <div class="timeline-markers">
+                            <div class="timeline-marker" data-week="1">
+                                <div class="marker-dot"></div>
+                                <div class="marker-label">Week 1-2</div>
+                            </div>
+
+                            <div class="timeline-marker" data-week="4">
+                                <div class="marker-dot"></div>
+                                <div class="marker-label">Week 3-4</div>
+                            </div>
+
+                            <div class="timeline-marker" data-week="6">
+                                <div class="marker-dot"></div>
+                                <div class="marker-label">Week 5-6</div>
+                            </div>
+
+                            <div class="timeline-marker" data-week="8">
+                                <div class="marker-dot"></div>
+                                <div class="marker-label">Week 7-8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="work-cta">
+                    <p class="work-cta-text">अब समझ गए कि यह कैसे काम करता है?</p>
+                    <button class="btn-work" onclick="scrollToContact()">
+                        <span>🔬</span>
+                        <span>अभी शुरू करें</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Recommendation Section -->
+            <section class="recommendation-section max-w-[450px] md:max-w-[900px] mx-auto px-4 py-6 md:py-8">
+                <!-- Background Motifs -->
+                <div class="rec-motif leaf-motif">🌿</div>
+                <div class="rec-motif heart-motif">💓</div>
+                <div class="rec-motif shield-motif">🛡️</div>
+                <div class="rec-motif drops-motif">💧</div>
+
+                <!-- Section Badge -->
+                <div class="text-center mb-4">
+                    <div class="rec-badge">
+                        <span>👨‍⚕️</span>
+                        <span>डॉक्टरों की सिफारिश</span>
+                    </div>
+                </div>
+
+                <!-- Section Title -->
+                <h2 class="rec-title">Ayurveda Experts की राय</h2>
+                <p class="rec-subtitle">बिना ऑपरेशन, प्राकृतिक उपचार</p>
+
+                <!-- Content Grid -->
+                <div class="rec-grid">
+                    <!-- Problem Analysis -->
+                    <div class="problem-analysis">
+                        <div class="analysis-header">
+                            <div class="analysis-icon">⚠️</div>
+                            <h3 class="analysis-title">गाँठ क्यों बनती है?</h3>
+                        </div>
+
+                        <div class="problem-flow">
+                            <div class="problem-step">
+                                <div class="problem-icon">🚫</div>
+                                <div class="problem-content">
+                                    <h4>ब्लड फ्लो रुकता है</h4>
+                                    <p>खराब सर्कुलेशन</p>
+                                </div>
+                            </div>
+
+                            <div class="flow-arrow">⬇️</div>
+
+                            <div class="problem-step">
+                                <div class="problem-icon">🔥</div>
+                                <div class="problem-content">
+                                    <h4>सूजन बार-बार आती है</h4>
+                                    <p>इन्फ्लेमेशन बढ़ता है</p>
+                                </div>
+                            </div>
+
+                            <div class="flow-arrow">⬇️</div>
+
+                            <div class="problem-step">
+                                <div class="problem-icon">☣️</div>
+                                <div class="problem-content">
+                                    <h4>टॉक्सिन जमा हो जाते हैं</h4>
+                                    <p>विष तत्व संचय</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Showcase -->
+                    <div class="rec-product-showcase">
+                        <div class="rec-product-glow"></div>
+
+                        <div class="rec-product-frame">
+                            <img src="./Image/Product.png" alt="Gath Heal Care Product" class="rec-product-bottle">
+
+                            <div class="rec-product-badge">
+                                <span class="rec-badge-icon">🌿</span>
+                                <span>Ayurvedic Solution</span>
+                            </div>
+                        </div>
+
+                        <div class="ayurveda-benefits">
+                            <div class="benefit-point">
+                                <span class="benefit-icon">✅</span>
+                                <span>शरीर को अंदर से साफ़ करता है</span>
+                            </div>
+                            <div class="benefit-point">
+                                <span class="benefit-icon">✅</span>
+                                <span>बिना ऑपरेशन, बिना दर्द</span>
+                            </div>
+                            <div class="benefit-point">
+                                <span class="benefit-icon">✅</span>
+                                <span>100% प्राकृतिक व सुरक्षित</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solution Explanation -->
+                    <div class="solution-explanation">
+                        <div class="solution-header">
+                            <div class="solution-icon">💡</div>
+                            <h3 class="solution-title">Ayurvedic विशेषज्ञों का मानना</h3>
+                        </div>
+
+                        <div class="solution-content">
+                            <div class="solution-quote">
+                                <div class="quote-mark">"</div>
+                                <p class="quote-text">
+                                    शरीर को अंदर से साफ़ करना ही सबसे सुरक्षित उपाय है।
+                                    यह न केवल गाँठ को घटाता है बल्कि भविष्य में होने वाली समस्याओं से भी बचाता है।
+                                </p>
+                                <div class="quote-author">
+                                    <div class="author-icon">👨‍⚕️</div>
+                                    <span>- Ayurveda Experts</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="natural-process">
+                            <h4 class="process-title">प्राकृतिक उपचार प्रक्रिया:</h4>
+                            <div class="process-steps">
+                                <div class="process-step">
+                                    <span class="step-num">1</span>
+                                    <span>Detox - विष तत्व निकालना</span>
+                                </div>
+                                <div class="process-step">
+                                    <span class="step-num">2</span>
+                                    <span>Circulation - ब्लड फ्लो सुधारना</span>
+                                </div>
+                                <div class="process-step">
+                                    <span class="step-num">3</span>
+                                    <span>Healing - प्राकृतिक उपचार</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="rec-cta">
+                    <p class="rec-cta-text">Ayurvedic विशेषज्ञों की सिफारिश पर भरोसा करें</p>
+                    <button class="btn-rec" onclick="scrollToContact()">
+                        <span>🌿</span>
+                        <span>अभी मंगवाएं</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ingredients section -->
+            <section id="ingredients"
+                class="px-4 py-8 bg-brand-light border-y border-brand-muted/60 max-[450px]:py-6 max-[450px]:px-3">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl max-[450px]:text-2xl font-eczar font-extrabold text-brand-accent">
+                        Key Ingredients <span class="text-brand-primary">(मुख्य जड़ी-बूटियाँ)</span>
+                    </h2>
+                    <div
+                        class="mx-auto mt-3 h-1.5 w-28 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full">
+                    </div>
+                </div>
+
+                <div class="ingredient-grid">
+                    <!-- Card 1 -->
+                    <article class="ingredient-card">
+                        <span class="ingredient-badge">🌿 Pure</span>
+                        <figure class="ingredient-img">
+                            <img src="./Image/Ind1.png" alt="हल्दी (Turmeric)"
+                                class="w-full h-full object-cover clip-ingredient" />
+                        </figure>
+                        <div>
+                            <h3 class="ingredient-title"><span class="ingredient-icon">✨</span>हल्दी</h3>
+                            <p class="ingredient-desc">सूजन और अंदरूनी संक्रमण कम करे</p>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="ingredient-card">
+                        <span class="ingredient-badge">💚 Natural</span>
+                        <figure class="ingredient-img">
+                            <img src="./Image/Ind2.avif" alt="गिलोय (Giloy)"
+                                class="w-full h-full object-cover clip-ingredient" />
+                        </figure>
+                        <div>
+                            <h3 class="ingredient-title"><span class="ingredient-icon">🌱</span>गिलोय</h3>
+                            <p class="ingredient-desc">शरीर को शुद्ध करे</p>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="ingredient-card">
+                        <span class="ingredient-badge">⭐ Potent</span>
+                        <figure class="ingredient-img">
+                            <img src="./Image/Ind3.png" alt="अश्वगंधा (Ashwagandha)"
+                                class="w-full h-full object-cover clip-ingredient" />
+                        </figure>
+                        <div>
+                            <h3 class="ingredient-title"><span class="ingredient-icon">💪</span>अश्वगंधा</h3>
+                            <p class="ingredient-desc">टिश्यू को मज़बूत बनाए</p>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="ingredient-card">
+                        <span class="ingredient-badge">🔬 Proven</span>
+                        <figure class="ingredient-img">
+                            <img src="./Image/Ind4.png" alt="शुद्ध गुग्गुल (Shuddh Guggul)"
+                                class="w-full h-full object-cover clip-ingredient" />
+                        </figure>
+                        <div>
+                            <h3 class="ingredient-title"><span class="ingredient-icon">🌟</span>शुद्ध गुग्गुल</h3>
+                            <p class="ingredient-desc">फैटी और फाइब्रस गाँठ को तोड़ने में मदद करे</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- How to Use Section -->
+            <section class="how-to-use-section w-full p-4">
+                <!-- Background Motifs -->
+                <div class="usage-motif clock-motif">🕒</div>
+                <div class="usage-motif water-motif">💧</div>
+                <div class="usage-motif calendar-motif">📅</div>
+                <div class="usage-motif pill-motif">💊</div>
+
+                <!-- Section Header -->
+                <div class="text-center relative z-10">
+                    <div class="usage-badge">
+                        <span>📖</span>
+                        <span>How to Use</span>
+                    </div>
+                    <h2 class="usage-title">उपयोग की विधि</h2>
+                    <p class="usage-subtitle">सरल और प्रभावी तरीका</p>
+                </div>
+
+                <!-- Usage Steps Grid -->
+                <div class="usage-grid">
+                    <!-- Step-by-step Instructions -->
+                    <div class="steps-container">
+                        <!-- Step 1 -->
+                        <div class="usage-step-card">
+                            <div class="usage-step-header">
+                                <div class="usage-step-number">1</div>
+                                <div class="usage-step-icon">🍽️</div>
+                                <div class="usage-step-content">
+                                    <h3 class="usage-step-title">खाना खाने के बाद</h3>
+                                    <p class="usage-step-desc">दिन में 2 बार लें</p>
+                                </div>
+                            </div>
+                            <div class="step-visual">
+                                <div class="meal-times">
+                                    <span class="meal-time">🌅 सुबह</span>
+                                    <span class="meal-time">🌆 शाम</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="usage-step-card">
+                            <div class="usage-step-header">
+                                <div class="usage-step-number">2</div>
+                                <div class="usage-step-icon">💧</div>
+                                <div class="usage-step-content">
+                                    <h3 class="usage-step-title">गुनगुने पानी के साथ</h3>
+                                    <p class="usage-step-desc">बेहतर अवशोषण के लिए</p>
+                                </div>
+                            </div>
+                            <div class="step-visual">
+                                <div class="water-temp">
+                                    <div class="temp-indicator">🌡️ गुनगुना पानी</div>
+                                    <div class="water-waves">
+                                        <div class="wave"></div>
+                                        <div class="wave"></div>
+                                        <div class="wave"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="usage-step-card">
+                            <div class="usage-step-header">
+                                <div class="usage-step-number">3</div>
+                                <div class="usage-step-icon">📅</div>
+                                <div class="usage-step-content">
+                                    <h3 class="usage-step-title">45-60 दिन तक लगातार</h3>
+                                    <p class="usage-step-desc">बेहतर परिणामों के लिए</p>
+                                </div>
+                            </div>
+                            <div class="step-visual">
+                                <div class="usage-steps-timeline">
+                                    <div class="usage-timeline-container">
+                                        <div class="usage-progress-track"></div>
+                                    </div>
+                                    <div class="usage-timeline-labels">
+                                        <span class="usage-timeline-label">15 दिन</span>
+                                        <span class="usage-timeline-label">30 दिन</span>
+                                        <span class="usage-timeline-label">45 दिन</span>
+                                        <span class="usage-timeline-label">60 दिन</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage Timeline Visualization -->
+                <div class="usage-timeline">
+                    <h3 class="timeline-title">दैनिक उपयोग का समय</h3>
+                    <div class="timeline-flow">
+                        <div class="time-slot morning">
+                            <div class="time-icon">🌅</div>
+                            <div class="time-label">सुबह का खाना</div>
+                            <div class="time-arrow">→</div>
+                            <div class="capsule-demo">💊</div>
+                            <div class="water-demo">💧</div>
+                        </div>
+                        <div class="time-connector"></div>
+                        <div class="time-slot evening">
+                            <div class="time-icon">🌆</div>
+                            <div class="time-label">शाम का खाना</div>
+                            <div class="time-arrow">→</div>
+                            <div class="capsule-demo">💊</div>
+                            <div class="water-demo">💧</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Notes -->
+                <div class="usage-notes">
+                    <div class="note-item">
+                        <span class="note-icon">⚠️</span>
+                        <span class="note-text">भोजन के तुरंत बाद लें, खाली पेट न लें</span>
+                    </div>
+                    <div class="note-item">
+                        <span class="note-icon">💡</span>
+                        <span class="note-text">नियमित सेवन से बेहतर परिणाम मिलते हैं</span>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="usage-cta">
+                    <button class="btn-usage" onclick="scrollToContact()">
+                        <span>🛒</span>
+                        <span>अभी ऑर्डर करें</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Certification Section -->
+            <section class="certification-section w-full px-4 py-6">
+                <!-- Background Motifs -->
+                <div class="cert-motif shield-motif">🛡️</div>
+                <div class="cert-motif star-motif">⭐</div>
+                <div class="cert-motif check-motif">✅</div>
+                <div class="cert-motif award-motif">🏆</div>
+
+                <!-- Section Header -->
+                <div class="text-center relative z-10">
+                    <div class="cert-badge">
+                        <span>Certified & Trusted</span>
+                    </div>
+                    <h2 class="cert-title">प्रमाणित और भरोसेमंद</h2>
+                    <p class="cert-subtitle">आयुर्वेदिक गुणवत्ता की गारंटी</p>
+                </div>
+
+                <!-- Certification Grid -->
+                <div class="cert-grid">
+                    <!-- Certification Points -->
+                    <div class="cert-points-container">
+                        <!-- GMP Certified -->
+                        <div class="cert-point">
+                            <div class="cert-point-img">
+                                <img src="./Image/trust1.png" alt="GMP Certified" class="trust-badge-img">
+                            </div>
+                            <div class="cert-point-content">
+                                <div class="cert-point-icon">✅</div>
+                                <h3 class="cert-point-title">GMP Certified</h3>
+                                <p class="cert-point-desc">अंतर्राष्ट्रीय मानक</p>
+                            </div>
+                        </div>
+
+                        <!-- Lab Tested -->
+                        <div class="cert-point">
+                            <div class="cert-point-img">
+                                <img src="./Image/trust2.png" alt="Lab Tested" class="trust-badge-img">
+                            </div>
+                            <div class="cert-point-content">
+                                <div class="cert-point-icon">✅</div>
+                                <h3 class="cert-point-title">Lab Tested</h3>
+                                <p class="cert-point-desc">प्रयोगशाला में जाँच</p>
+                            </div>
+                        </div>
+
+                        <!-- 100% Ayurvedic -->
+                        <div class="cert-point">
+                            <div class="cert-point-img">
+                                <img src="./Image/trust3.png" alt="100% Ayurvedic" class="trust-badge-img">
+                            </div>
+                            <div class="cert-point-content">
+                                <div class="cert-point-icon">✅</div>
+                                <h3 class="cert-point-title">100% Ayurvedic</h3>
+                                <p class="cert-point-desc">प्राकृतिक जड़ी-बूटियाँ</p>
+                            </div>
+                        </div>
+
+                        <!-- No Side Effects -->
+                        <div class="cert-point">
+                            <div class="cert-point-img">
+                                <img src="./Image/trust4.png" alt="No Side Effects" class="trust-badge-img">
+                            </div>
+                            <div class="cert-point-content">
+                                <div class="cert-point-icon">✅</div>
+                                <h3 class="cert-point-title">No Side Effects</h3>
+                                <p class="cert-point-desc">पूर्णतः सुरक्षित</p>
+                            </div>
+                        </div>
+
+                        <!-- 1 Lac Satisfaction -->
+                        <div class="cert-point">
+                            <div class="cert-point-img">
+                                <img src="./Image/trust5.png" alt="1 Lac Satisfaction" class="trust-badge-img">
+                            </div>
+                            <div class="cert-point-content">
+                                <div class="cert-point-icon">✅</div>
+                                <h3 class="cert-point-title">1 Lac Satisfaction</h3>
+                                <p class="cert-point-desc">खुश ग्राहकों का भरोसा</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CTA -->
+                <div class="cert-cta">
+                    <button class="btn-cert" onclick="scrollToContact()">
+                        <span>🛒</span>
+                        <span>अभी ऑर्डर करें</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Offer Section -->
+            <section id="offer" class="p-4">
+                <div class="offer-wrap">
+                    <div class="offer-motif pct">%</div>
+                    <div class="offer-motif tag">🏷️</div>
+
+                    <div class="text-center relative z-10">
+                        <span class="offer-badge font-eczar">🎁 Limited Time Safe Body Offer</span>
+                        <h3 class="offer-title font-eczar">Special <span class="text-brand-primary">10% Discount</span>
+                            Available
+                        </h3>
+                        <p class="offer-sub font-eczar">सीमित समय के लिए — आज ही ऑर्डर करें</p>
+                    </div>
+
+                    <div class="offer-grid  relative z-10">
+                        <div>
+                            <div class="timer-row">
+                                <div id="offerCountdown" class="offer-timer font-eczar">
+                                    <span class="offer-bell">🔔</span>
+                                    <span class="time-text">00:00:00</span>
+                                </div>
+                                <div class="timeline-wrap" aria-hidden="true">
+                                    <div id="offerProgress" class="timeline-bar"></div>
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <div class="feature-chip"><span class="feature-ico">💳</span><span>Cash on
+                                        Delivery</span></div>
+                                <div class="feature-chip"><span class="feature-ico">🚚</span><span>Fast Dispatch</span>
+                                </div>
+                            </div>
+
+                            <div class="offer-cta">
+                                <button class="btn-offer font-eczar" onclick="scrollToContact()">Grab 10% OFF • Order
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gurenteed content  -->
+            <section id="guarantee" class="px-4 py-8 max-[450px]:py-6 max-[450px]:px-3">
+                <div class="guarantee-section">
+                    <!-- background motifs -->
+                    <div class="refund-motif m1">↩</div>
+                    <div class="refund-motif m2">₹</div>
+
+                    <!-- badge + title -->
+                    <div class="text-center relative z-10">
+                        <span class="guarantee-badge font-eczar">
+                            🛡️ 15-Day Satisfaction Assurance
+                        </span>
+                        <h3 class="guarantee-title font-eczar">15 दिनों तक बिना जोखिम ट्राय करें</h3>
+                        <p class="guarantee-sub font-eczar">अगर आपको संतुष्टि न मिले, तो हमारी support team से संपर्क
+                            करें।</p>
+                    </div>
+
+                    <!-- optional bottle image -->
+                    <div class="bottle-wrap mt-4 relative z-10">
+                        <!-- Replace Image/bottle.png with your actual bottle image path -->
+                        <img src="Image/bottle.png" alt="Product Bottle" class="bottle-img"
+                            onerror="this.parentElement.style.display='none'">
+                    </div>
+
+                    <!-- promise points -->
+                    <div class="promise-grid relative z-10">
+                        <div class="promise-item">
+                            <div class="icon-circle">🛡️</div>
+                            <div>
+                                <p class="promise-text font-eczar">No Questions Asked Refund</p>
+                                <p class="promise-sub font-eczar">संतुष्टि न होने पर सरल रिफंड प्रक्रिया</p>
+                            </div>
+                        </div>
+                        <div class="promise-item">
+                            <div class="icon-circle">🔁</div>
+                            <div>
+                                <p class="promise-text font-eczar">Risk‑Free 15 Days</p>
+                                <p class="promise-sub font-eczar">आसानी से ट्राय करें, पसंद न आए तो रिफंड ले लें</p>
+                            </div>
+                        </div>
+                        <div class="promise-item">
+                            <div class="icon-circle">🎧</div>
+                            <div>
+                                <p class="promise-text font-eczar">Dedicated Support</p>
+                                <p class="promise-sub font-eczar">हमारी सपोर्ट टीम आपकी हर स्टेप पर साथ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA bar -->
+                    <div class="guarantee-cta relative z-10">
+                        <div class="guarantee-note font-eczar">आपका पैसा सुरक्षित है — 100% Satisfaction First</div>
+                        <button class="btn-guarantee font-eczar" onclick="scrollToContact()">
+                            ✅ Risk‑Free Try • Order Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- review section -->
+            <section id="reviews" class="px-4 py-8 bg-white max-[450px]:py-6 max-[450px]:px-3">
+                <div class="text-center mb-6">
+                    <span
+                        class="inline-block bg-brand-light text-brand-primary font-eczar font-bold text-sm px-4 py-2 rounded-full mb-3 border border-brand-primary/30">
+                        Real Customer Results
+                    </span>
+                    <h2 class="text-3xl max-[450px]:text-2xl font-eczar font-extrabold text-brand-accent">
+                        Success Stories <span class="text-brand-primary">(Social Proof)</span>
+                    </h2>
+                    <div
+                        class="mx-auto mt-3 h-1.5 w-28 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full">
+                    </div>
+                </div>
+
+                <div class="review-grid">
+                    <!-- Review 1 -->
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <img src="Image/Customer1.png" alt="सीमा देवी" class="w-full h-full object-cover">
+                            </div>
+                            <div class="review-info">
+                                <h4 class="font-eczar">सीमा देवी</h4>
+                                <div class="review-meta font-eczar">
+                                    <span class="review-location">📍 दिल्ली</span>
+                                    <span>•</span>
+                                    <span>Age 25</span>
+                                </div>
+                                <div class="stars">
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text font-eczar">
+                            "मुझे गाँठ कई सालों से थी। दर्द कम था इसलिए ध्यान नहीं दिया।
+                            Gath Heal Capsule लेने के 3–4 हफ्तों में गाँठ नरम लगने लगी।
+                            अब सूजन भी नहीं रहती और परेशानी नहीं है।"
+                        </p>
+                        <div class="review-footer">
+                            <span class="platform-badge google">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                    <path
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                    <path
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                    <path
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                                </svg>
+                                Google Review
+                            </span>
+                            <span class="verified-badge">
+                                ✓ Verified Purchase
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Review 2 -->
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <img src="Image/Customer2.png" alt="अशोक कुमार" class="w-full h-full object-cover">
+                            </div>
+                            <div class="review-info">
+                                <h4 class="font-eczar">अशोक कुमार</h4>
+                                <div class="review-meta font-eczar">
+                                    <span class="review-location">📍 जयपुर</span>
+                                    <span>•</span>
+                                    <span>Age 52</span>
+                                </div>
+                                <div class="stars">
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text font-eczar">
+                            "डॉक्टर ने कहा था कि अगर गाँठ बढ़ी तो ऑपरेशन करना पड़ेगा।
+                            इस डर से Gath Heal Capsule शुरू किया।
+                            कुछ ही हफ्तों में गाँठ का उभार कम होने लगा और दर्द भी शांत हो गया।"
+                        </p>
+                        <div class="review-footer">
+                            <span class="platform-badge facebook">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                                Meta Review
+                            </span>
+                            <span class="verified-badge">
+                                ✓ Verified Purchase
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Review 3 -->
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <img src="Image/Customer3.png" alt="रेखा शर्मा" class="w-full h-full object-cover">
+                            </div>
+                            <div class="review-info">
+                                <h4 class="font-eczar">रेखा शर्मा</h4>
+                                <div class="review-meta font-eczar">
+                                    <span class="review-location">📍 भोपाल</span>
+                                    <span>•</span>
+                                    <span>Age 38</span>
+                                </div>
+                                <div class="stars">
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text font-eczar">
+                            "लगातार इस्तेमाल से गाँठ का सख़्तपन कम हुआ और अब डर नहीं लगता।
+                            मेरे लिए सबसे बड़ी राहत ये थी कि बिना सर्जरी समाधान मिला।"
+                        </p>
+                        <div class="review-footer">
+                            <span class="platform-badge google">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                    <path
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                    <path
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                    <path
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                                </svg>
+                                Google Review
+                            </span>
+                            <span class="verified-badge">
+                                ✓ Verified Purchase
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="p-4 bg-brand-primary text-white border-b-2 border-brand-light" id="contact">
+
+                <!-- Order Header -->
+                <div class="text-center mb-6 max-[450px]:mb-4">
+                    <h2 class="text-2xl max-[450px]:text-xl font-semibold font-eczar mb-3 max-[450px]:mb-2">
+                        🛡️ अपनी त्वचा को Gath Heal Care से से बचाइए।
+                    </h2>
+                    <p class="text-3xl max-[450px]:text-2xl font-eczar font-bold mb-2">
+                        ⚡ 7–10 दिनों में असर महसूस करें।
+                    </p>
+                    <div class="mt-4 max-[450px]:mt-3">
+                        <p
+                            class="text-lg max-[450px]:text-base font-eczar font-bold text-white bg-gradient-to-r from-brand-primary to-brand-secondary px-4 py-3 rounded-lg shadow-xl ring-2 ring-white/60 max-[450px]:px-3 max-[450px]:py-2 animate-pulse">
+                            <span class="block text-xl max-[450px]:text-lg font-extrabold">👉 अभी ऑर्डर करें</span>
+                            <span class="block text-brand-light text-xl max-[450px]:text-lg font-semibold">और अपनी गाँठ
+                                की समस्या को जड़ से ठीक करने की ओर पहला कदम बढ़ाएँ।</span>
+                        </p>
+                        <p
+                            class="text-3xl max-[450px]:text-2xl font-eczar font-extrabold text-brand-light mt-3 max-[450px]:mt-6 tracking-wide">
+                            🛒 ORDER NOW
+                        </p>
+                    </div>
+                </div>
+
+                <form id="contactForm">
+                    <div class="mb-4 max-[450px]:mb-3">
+                        <label for="name"
+                            class="block mb-2 text-2xl max-[450px]:text-xl text-white font-eczar font-semibold max-[450px]:mb-1">आपका
+                            नाम:</label>
+                        <input type="text" id="name" name="name" required placeholder="अपना नाम लिखें"
+                            class="w-full p-3 border-none rounded text-lg font-bold text-brand-primary placeholder-brand-muted font-eczar max-[450px]:p-2 max-[450px]:text-base bg-brand-light">
+                    </div>
+                    <div class="mb-4 max-[450px]:mb-3">
+                        <label for="phone"
+                            class="block mb-2 text-2xl max-[450px]:text-xl text-white font-eczar font-semibold max-[450px]:mb-1">फोन
+                            नंबर:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="अपना फोन नंबर लिखें"
+                            class="w-full p-3 border-none rounded text-lg text-brand-primary  font-bold placeholder-brand-primary font-eczar max-[450px]:p-2 max-[450px]:text-base bg-brand-light">
+                    </div>
+                    <button type="submit"
+                        class="bg-brand-light text-brand-primary font-bold border-none py-4 px-8 rounded text-2xl font-eczar cursor-pointer w-full mt-4 transition-all duration-300 hover:bg-opacity-90 max-[450px]:py-3 max-[450px]:px-4 max-[450px]:text-xl max-[450px]:mt-3"
+                        onclick="showThankYou()">
+                        <span>✨</span>
+                        अभी ऑर्डर करें
+                        <span>✨</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="max-w-md mx-auto p-4">
+                <div class="text-center mb-8 relative">
+                    <h2 class="text-[var(--brand-primary)] m-0 text-3xl font-bold relative inline-block font-arya">
+                        अक्सर पूछे जाने वाले सवाल
+                        <span
+                            class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-15 h-1 bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-secondary)] rounded animate-pulse"></span>
+                    </h2>
+                </div>
+
+                <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+                    onclick="toggleFAQ(this)">
+                    <div
+                        class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+                        <div class="flex items-center flex-1">
+                            <div
+                                class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                                1
+                            </div>
+                            <span>क्या ये हर तरह की गाँठ में काम करता है?</span>
+                        </div>
+                        <div
+                            class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                            🔽</div>
+                    </div>
+                    <div
+                        class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+                        <div
+                            class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                            <span class="mr-1 text-lg">✅</span>
+                            <span class="text-[var(--accent)] font-semibold">हाँ, बिल्कुल!</span>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>फैटी/सॉफ्ट टिश्यू व लिपोमा में उपयोगी</li>
+                                <li>दर्दरहित, नियमित प्रयोग से असर दिखता है</li>
+                                <li>आकार व कठोरता धीरे-धीरे घटती है</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+                    onclick="toggleFAQ(this)">
+                    <div
+                        class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+                        <div class="flex items-center flex-1">
+                            <div
+                                class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                                2
+                            </div>
+                            <span>रिज़ल्ट कब दिखता है?</span>
+                        </div>
+                        <div
+                            class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                            🔽</div>
+                    </div>
+                    <div
+                        class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+                        <div
+                            class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                            <span class="mr-1 text-lg">⏰</span>
+                            <span class="text-[var(--accent)] font-semibold">समयरेखा (औसत)</span>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>छोटी गाँठ: 2–3 हफ्ते</li>
+                                <li>सामान्य परिणाम: 3–6 हफ्ते</li>
+                                <li>पुरानी/बड़ी गाँठ: 6–8+ हफ्ते (निरंतरता रखें)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+                    onclick="toggleFAQ(this)">
+                    <div
+                        class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+                        <div class="flex items-center flex-1">
+                            <div
+                                class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                                3
+                            </div>
+                            <span>क्या कोई साइड इफेक्ट हैं?</span>
+                        </div>
+                        <div
+                            class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                            🔽</div>
+                    </div>
+                    <div
+                        class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+                        <div
+                            class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                            <span class="mr-1 text-lg">🌿</span>
+                            <span class="text-[var(--accent)] font-semibold">आम तौर पर सुरक्षित</span>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>100% आयुर्वेदिक, स्टेरॉयड-फ्री</li>
+                                <li>कोई साइड इफेक्ट नहीं</li>
+                                <li>एलर्जी पर उपयोग रोकें और डॉक्टर से सलाह लें</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+                    onclick="toggleFAQ(this)">
+                    <div
+                        class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+                        <div class="flex items-center flex-1">
+                            <div
+                                class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                                4
+                            </div>
+                            <span>पुरानी गाँठ में भी असर करेगा?</span>
+                        </div>
+                        <div
+                            class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                            🔽</div>
+                    </div>
+                    <div
+                        class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+                        <div
+                            class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                            <span class="mr-1 text-lg">💪</span>
+                            <span class="text-[var(--accent)] font-semibold">पुरानी गाँठ पर भी असर</span>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>समय अधिक लग सकता है (2–3 माह)</li>
+                                <li>नियमित उपयोग + हल्की मसाज से बेहतर परिणाम</li>
+                                <li>परिणाम धीरे-धीरे दिखाई देते हैं</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+                    onclick="toggleFAQ(this)">
+                    <div
+                        class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+                        <div class="flex items-center flex-1">
+                            <div
+                                class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                                5
+                            </div>
+                            <span>दिन में कितनी बार लगाना है?</span>
+                        </div>
+                        <div
+                            class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                            🔽</div>
+                    </div>
+                    <div
+                        class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+                        <div
+                            class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                            <span class="mr-1 text-lg">🕐</span>
+                            <span class="text-[var(--accent)] font-semibold">उपयोग का तरीका</span>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>दिन में 2 बार, खाना खाने के बाद</li>
+                                <li>गुनगुने पानी के साथ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-2 border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 transition-all duration-300 relative hover:border-[#7B2D3C] hover:shadow-xl hover:-translate-y-0.5 faq-item"
+                    onclick="toggleFAQ(this)">
+                    <div
+                        class="p-5 cursor-pointer flex justify-between items-center font-semibold text-gray-800 text-base relative transition-all duration-300 hover:text-[var(--accent)]">
+                        <div class="flex items-center flex-1">
+                            <div
+                                class="bg-gradient-to-br from-[var(--accent)] to-[#A0344A] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 animate-pulse">
+                                6
+                            </div>
+                            <span>क्या बच्चों के लिए सुरक्षित है?</span>
+                        </div>
+                        <div
+                            class="text-xl transition-all duration-500 text-[var(--accent)] ml-3 flex items-center faq-icon">
+                            🔽</div>
+                    </div>
+                    <div
+                        class="max-h-0 overflow-hidden transition-all duration-500 bg-gradient-to-br from-gray-50 to-white faq-answer">
+                        <div
+                            class="p-5 text-gray-600 leading-relaxed text-sm -translate-y-2 opacity-0 transition-all duration-300 delay-100 faq-answer-content">
+                            <span class="mr-1 text-lg">👶</span>
+                            <span class="text-[var(--accent)] font-semibold">बच्चों के लिए मार्गदर्शन</span>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li> सभी उम्र के बच्चों के लिए सुरक्षित</li>
+                                <li>आँख / मुंह / घाव से दूर रखें</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 
         </main>
         <footer
@@ -3713,8 +6565,8 @@
 
                         <!-- Order Button -->
                         <button id="ctaButton" onclick="scrollToContact()"
-                            class="text-white px-6 py-2.5 rounded-xl font-eczar font-bold text-base transition-all duration-300 shadow-lg hover:scale-105 hover:shadow-xl transform whitespace-nowrap max-[450px]:text-sm max-[450px]:px-4 max-[450px]:py-2"
-                            style="background: linear-gradient(135deg, var(--brand-secondary), var(--brand-primary)); border: 2px solid rgba(255, 255, 255, 0.3);">
+                            class="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-800 px-6 py-2.5 rounded-xl font-eczar font-bold text-base transition-all duration-300 shadow-lg hover:scale-105 hover:shadow-xl transform whitespace-nowrap max-[450px]:text-sm max-[450px]:px-4 max-[450px]:py-2"
+                           >
                             <span class="flex items-center gap-2">
                                 <span>🛒</span>
                                 <span>Order Now</span>
@@ -3724,179 +6576,178 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        function showThankYou() {
-            // Process and fill form data
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
+        <script>
+            function showThankYou() {
+                // Process and fill form data
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
 
-            // Validate form data
-            if (!name || !phone || phone.length < 10 || phone.length > 10) {
-                alert('कृपया सभी फील्ड सही ढंग से भरें!');
-                return false;
+                // Validate form data
+                if (!name || !phone || phone.length < 10 || phone.length > 10) {
+                    alert('कृपया सभी फील्ड सही ढंग से भरें!');
+                    return false;
+                }
+
+
+
+                // Process the data (you can modify this part as needed)
+                const formData = {
+                    customerName: name,
+                    phoneNumber: phone,
+                    timestamp: new Date().toLocaleString('hi-IN'),
+                    product: 'Gath Heal Care'
+                };
+                // Fill/store the processed data (example: console log or local storage)
+                localStorage.setItem('customerOrder', JSON.stringify(formData));
+
+                // Show thank you modal if it exists, otherwise show alert
+                const modal = document.getElementById('thankYouModal');
+                if (modal) {
+                    modal.style.display = 'flex';
+                    // Auto close after 3 seconds
+                    setTimeout(() => {
+                        closeModal();
+                    }, 20000);
+                } else {
+                    // Fallback alert with processed data
+                    alert(`धन्यवाद ${name}! आपका ऑर्डर सफलतापूर्वक सबमिट हो गया है। हमारी टीम जल्द ही ${phone} पर आपसे संपर्क करेगी।`);
+                    document.getElementById('contactForm').reset();
+                }
+
+                return true;
             }
 
-
-
-            // Process the data (you can modify this part as needed)
-            const formData = {
-                customerName: name,
-                phoneNumber: phone,
-                timestamp: new Date().toLocaleString('hi-IN'),
-                product: 'Gath Heal Care'
-            };
-            // Fill/store the processed data (example: console log or local storage)
-            localStorage.setItem('customerOrder', JSON.stringify(formData));
-
-            // Show thank you modal if it exists, otherwise show alert
-            const modal = document.getElementById('thankYouModal');
-            if (modal) {
-                modal.style.display = 'flex';
-                // Auto close after 3 seconds
-                setTimeout(() => {
-                    closeModal();
-                }, 20000);
-            } else {
-                // Fallback alert with processed data
-                alert(`धन्यवाद ${name}! आपका ऑर्डर सफलतापूर्वक सबमिट हो गया है। हमारी टीम जल्द ही ${phone} पर आपसे संपर्क करेगी।`);
+            function closeModal() {
+                const modal = document.getElementById('thankYouModal');
+                if (modal) {
+                    modal.style.display = 'none';
+                }
                 document.getElementById('contactForm').reset();
             }
 
-            return true;
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('thankYouModal');
-            if (modal) {
-                modal.style.display = 'none';
+            function scrollToContact() {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
             }
-            document.getElementById('contactForm').reset();
-        }
 
-        function scrollToContact() {
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        }
+            // Countdown Timer Function
+            function updateCountdown() {
+                const now = new Date();
+                const tomorrow = new Date(now);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(0, 0, 0, 0); // Set to midnight
 
-        // Countdown Timer Function
-        function updateCountdown() {
-            const now = new Date();
-            const tomorrow = new Date(now);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            tomorrow.setHours(0, 0, 0, 0); // Set to midnight
+                const timeRemaining = tomorrow - now;
 
-            const timeRemaining = tomorrow - now;
+                const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                const formattedTime =
+                    String(hours).padStart(2, '0') + ':' +
+                    String(minutes).padStart(2, '0') + ':' +
+                    String(seconds).padStart(2, '0');
 
-            const formattedTime =
-                String(hours).padStart(2, '0') + ':' +
-                String(minutes).padStart(2, '0') + ':' +
-                String(seconds).padStart(2, '0');
-
-            const countdownElement = document.getElementById('countdown');
-            if (countdownElement) {
-                countdownElement.innerHTML = `<span class="animate-pulse">⏰</span> <span>${formattedTime}</span>`;
+                const countdownElement = document.getElementById('countdown');
+                if (countdownElement) {
+                    countdownElement.innerHTML = `<span class="animate-pulse">⏰</span> <span>${formattedTime}</span>`;
+                }
+                const offerCd = document.getElementById('offerCountdown');
+                if (offerCd) {
+                    const timeNode = offerCd.querySelector('.time-text');
+                    if (timeNode) timeNode.textContent = formattedTime;
+                }
+                const offerProgress = document.getElementById('offerProgress');
+                if (offerProgress) {
+                    const totalMs = 24 * 60 * 60 * 1000;
+                    const elapsed = totalMs - timeRemaining;
+                    const percent = Math.min(100, Math.max(0, (elapsed / totalMs) * 100));
+                    offerProgress.style.width = percent + '%';
+                }
             }
-            const offerCd = document.getElementById('offerCountdown');
-            if (offerCd) {
-                const timeNode = offerCd.querySelector('.time-text');
-                if (timeNode) timeNode.textContent = formattedTime;
-            }
-            const offerProgress = document.getElementById('offerProgress');
-            if (offerProgress) {
-                const totalMs = 24 * 60 * 60 * 1000;
-                const elapsed = totalMs - timeRemaining;
-                const percent = Math.min(100, Math.max(0, (elapsed / totalMs) * 100));
-                offerProgress.style.width = percent + '%';
-            }
-        }
-        // Start the countdown timer immediately and update every second
-        updateCountdown(); // Initial call
-        setInterval(updateCountdown, 1000); // Update every second
+            // Start the countdown timer immediately and update every second
+            updateCountdown(); // Initial call
+            setInterval(updateCountdown, 1000); // Update every second
 
-        // FAQ Toggle Function
-        function toggleFAQ(element) {
-            // Close all other FAQ items
-            const allFAQs = document.querySelectorAll('.faq-item');
-            allFAQs.forEach(faq => {
-                if (faq !== element && faq.classList.contains('active')) {
-                    faq.classList.remove('active');
-                    // Reset styles for closed items
-                    const answer = faq.querySelector('.faq-answer');
-                    const content = faq.querySelector('.faq-answer-content');
+            // FAQ Toggle Function
+            function toggleFAQ(element) {
+                // Close all other FAQ items
+                const allFAQs = document.querySelectorAll('.faq-item');
+                allFAQs.forEach(faq => {
+                    if (faq !== element && faq.classList.contains('active')) {
+                        faq.classList.remove('active');
+                        // Reset styles for closed items
+                        const answer = faq.querySelector('.faq-answer');
+                        const content = faq.querySelector('.faq-answer-content');
+                        if (answer) answer.style.maxHeight = '0';
+                        if (content) {
+                            content.style.transform = 'translateY(-10px)';
+                            content.style.opacity = '0';
+                        }
+                    }
+                });
+
+                // Toggle current FAQ item
+                const isActive = element.classList.contains('active');
+                const answer = element.querySelector('.faq-answer');
+                const content = element.querySelector('.faq-answer-content');
+
+                if (isActive) {
+                    // Close current item
+                    element.classList.remove('active');
                     if (answer) answer.style.maxHeight = '0';
                     if (content) {
                         content.style.transform = 'translateY(-10px)';
                         content.style.opacity = '0';
                     }
+                } else {
+                    // Open current item
+                    element.classList.add('active');
+                    if (answer) answer.style.maxHeight = '300px';
+                    if (content) {
+                        setTimeout(() => {
+                            content.style.transform = 'translateY(0)';
+                            content.style.opacity = '1';
+                        }, 100);
+                    }
                 }
-            });
 
-            // Toggle current FAQ item
-            const isActive = element.classList.contains('active');
-            const answer = element.querySelector('.faq-answer');
-            const content = element.querySelector('.faq-answer-content');
-
-            if (isActive) {
-                // Close current item
-                element.classList.remove('active');
-                if (answer) answer.style.maxHeight = '0';
-                if (content) {
-                    content.style.transform = 'translateY(-10px)';
-                    content.style.opacity = '0';
-                }
-            } else {
-                // Open current item
-                element.classList.add('active');
-                if (answer) answer.style.maxHeight = '300px';
-                if (content) {
+                // Scroll the active FAQ into view
+                if (!isActive) {
                     setTimeout(() => {
-                        content.style.transform = 'translateY(0)';
-                        content.style.opacity = '1';
-                    }, 100);
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'nearest'
+                        });
+                    }, 200);
                 }
             }
 
-            // Scroll the active FAQ into view
-            if (!isActive) {
-                setTimeout(() => {
-                    element.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'nearest'
+            // Theme switching removed: using fixed LP palette via data-theme="maroon"
+
+            // Auto-collapse FAQ on outside click
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.faq-item')) {
+                    document.querySelectorAll('.faq-item.active').forEach(faq => {
+                        faq.classList.remove('active');
                     });
-                }, 200);
-            }
-        }
-
-        // Theme switching removed: using fixed LP palette via data-theme="maroon"
-
-        // Auto-collapse FAQ on outside click
-        document.addEventListener('click', function (e) {
-            if (!e.target.closest('.faq-item')) {
-                document.querySelectorAll('.faq-item.active').forEach(faq => {
-                    faq.classList.remove('active');
-                });
-            }
-        });
-
-        // Initialize FAQ animations on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-
-                setTimeout(() => {
-                    item.style.transition = 'all 0.6s ease';
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, index * 100);
+                }
             });
-        });
-    </script>
+
+            // Initialize FAQ animations on page load
+            document.addEventListener('DOMContentLoaded', function () {
+                const faqItems = document.querySelectorAll('.faq-item');
+                faqItems.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.6s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            });
+        </script>
 </body>
 
 </html>
