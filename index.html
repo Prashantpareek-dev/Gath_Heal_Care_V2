@@ -5542,7 +5542,7 @@
                                 </div>
                             </div>
 
-                        
+
 
                             <div class="problem-step">
                                 <div class="problem-icon">🔥</div>
@@ -5974,55 +5974,302 @@
                 </div>
             </section>
 
-            <!-- Contact Section -->
-            <section class="p-4 bg-brand-primary text-white border-b-2 border-brand-light" id="contact">
+            <html>
 
-                <!-- Order Header -->
-                <div class="text-center mb-6 max-[450px]:mb-4">
-                    <h2 class="text-2xl max-[450px]:text-xl font-semibold font-eczar mb-3 max-[450px]:mb-2">
-                        🛡️ अपनी त्वचा को Gath Heal Care से से बचाइए।
-                    </h2>
-                    <p class="text-3xl max-[450px]:text-2xl font-eczar font-bold mb-2">
-                        ⚡ 7–10 दिनों में असर महसूस करें।
-                    </p>
-                    <div class="mt-4 max-[450px]:mt-3">
-                        <p
-                            class="text-lg max-[450px]:text-base font-eczar font-bold text-white bg-gradient-to-r from-brand-primary to-brand-secondary px-4 py-3 rounded-lg shadow-xl ring-2 ring-white/60 max-[450px]:px-3 max-[450px]:py-2 animate-pulse">
-                            <span class="block text-xl max-[450px]:text-lg font-extrabold">👉 अभी ऑर्डर करें</span>
-                            <span class="block text-brand-light text-xl max-[450px]:text-lg font-semibold">और अपनी गाँठ
-                                की समस्या को जड़ से ठीक करने की ओर पहला कदम बढ़ाएँ।</span>
-                        </p>
-                        <p
-                            class="text-3xl max-[450px]:text-2xl font-eczar font-extrabold text-brand-light mt-3 max-[450px]:mt-6 tracking-wide">
-                            🛒 ORDER NOW
-                        </p>
-                    </div>
-                </div>
+            <head>
+                <style>
+                    /* Color Themes */
+                    :root {
+                        /* Purple Theme (Default) */
+                        --brand-primary: #6A00F4;
+                        --brand-secondary: #8E2DE2;
+                        --brand-light: #EDE7F6;
+                        --brand-muted: #B39DDB;
+                        --brand-accent: #3B1F5E;
+                        --accent: #6A00F4;
+                        --support-bg: #F4EBE0;
+                        --text-dark: #2D0A4B;
+                        --muted: #7E57C2;
+                        --success-color: #10B981;
+                        --warning-color: #F59E0B;
+                        --danger-color: #EF4444;
+                    }
 
-                <form id="contactForm">
-                    <div class="mb-4 max-[450px]:mb-3">
-                        <label for="name"
-                            class="block mb-2 text-2xl max-[450px]:text-xl text-white font-eczar font-semibold max-[450px]:mb-1">आपका
-                            नाम:</label>
-                        <input type="text" id="name" name="name" required placeholder="अपना नाम लिखें"
-                            class="w-full p-3 border-none rounded text-lg font-bold text-brand-primary placeholder-brand-muted font-eczar max-[450px]:p-2 max-[450px]:text-base bg-brand-light">
+                    /* Green Theme */
+                    [data-theme="green"] {
+                        --brand-primary: #059669;
+                        --brand-secondary: #10B981;
+                        --brand-light: #D1FAE5;
+                        --brand-muted: #A7F3D0;
+                        --brand-accent: #064E3B;
+                        --accent: #059669;
+                        --support-bg: #ECFDF5;
+                        --text-dark: #064E3B;
+                        --muted: #6EE7B7;
+                    }
+
+                    /* Blue Theme */
+                    [data-theme="blue"] {
+                        --brand-primary: #2563EB;
+                        --brand-secondary: #3B82F6;
+                        --brand-light: #DBEAFE;
+                        --brand-muted: #93C5FD;
+                        --brand-accent: #1E3A8A;
+                        --accent: #2563EB;
+                        --support-bg: #EFF6FF;
+                        --text-dark: #1E3A8A;
+                        --muted: #60A5FA;
+                    }
+
+                    /* Orange Theme */
+                    [data-theme="orange"] {
+                        --brand-primary: #EA580C;
+                        --brand-secondary: #FB923C;
+                        --brand-light: #FED7AA;
+                        --brand-muted: #FDBA74;
+                        --brand-accent: #9A3412;
+                        --accent: #EA580C;
+                        --support-bg: #FFF7ED;
+                        --text-dark: #9A3412;
+                        --muted: #F97316;
+                    }
+
+                    /* Additional Brand Palettes */
+                    /* Maroon (Ayurvedic/Herbal) */
+                    [data-theme="maroon"] {
+                        --brand-primary: #7B2D3C;
+                        --brand-secondary: #A0344A;
+                        --brand-light: #F5E6E8;
+                        --brand-muted: #D4A5B0;
+                        --brand-accent: #4A1B23;
+                        --accent: #7B2D3C;
+                        --support-bg: #FDF7F0;
+                        --text-dark: #3D0E15;
+                        --muted: #B8677A;
+                    }
+
+                    /* Rose */
+                    [data-theme="rose"] {
+                        --brand-primary: #E11D48;
+                        --brand-secondary: #FB7185;
+                        --brand-light: #FFE4E6;
+                        --brand-muted: #FDA4AF;
+                        --brand-accent: #9F1239;
+                        --accent: #E11D48;
+                        --support-bg: #FFF1F2;
+                        --text-dark: #881337;
+                        --muted: #FDA4AF;
+                    }
+
+                    /* Teal */
+                    [data-theme="teal"] {
+                        --brand-primary: #0D9488;
+                        --brand-secondary: #14B8A6;
+                        --brand-light: #CCFBF1;
+                        --brand-muted: #99F6E4;
+                        --brand-accent: #115E59;
+                        --accent: #0D9488;
+                        --support-bg: #F0FDFA;
+                        --text-dark: #115E59;
+                        --muted: #5EEAD4;
+                    }
+
+                    /* Slate */
+                    [data-theme="slate"] {
+                        --brand-primary: #334155;
+                        --brand-secondary: #475569;
+                        --brand-light: #E2E8F0;
+                        --brand-muted: #CBD5E1;
+                        --brand-accent: #0F172A;
+                        --accent: #334155;
+                        --support-bg: #F8FAFC;
+                        --text-dark: #0F172A;
+                        --muted: #94A3B8;
+                    }
+
+                    /* Amber */
+                    [data-theme="amber"] {
+                        --brand-primary: #D97706;
+                        --brand-secondary: #F59E0B;
+                        --brand-light: #FEF3C7;
+                        --brand-muted: #FCD34D;
+                        --brand-accent: #92400E;
+                        --accent: #D97706;
+                        --support-bg: #FFFBEB;
+                        --text-dark: #78350F;
+                        --muted: #F59E0B;
+                    }
+
+                    .bg-brand-primary {
+                        background-color: var(--brand-primary);
+                    }
+
+                    .bg-brand-light {
+                        background-color: var(--brand-light);
+                    }
+
+                    .bg-brand-muted {
+                        background-color: var(--brand-muted);
+                    }
+
+                    .bg-brand-accent {
+                        background-color: var(--brand-accent);
+                    }
+
+                    .text-brand-primary {
+                        color: var(--brand-primary);
+                    }
+
+                    .text-brand-secondary {
+                        color: var(--brand-secondary);
+                    }
+
+                    .text-brand-light {
+                        color: var(--brand-light);
+                    }
+
+                    .text-brand-muted {
+                        color: var(--brand-muted);
+                    }
+
+                    .text-brand-accent {
+                        color: var(--brand-accent);
+                    }
+
+                    .border-brand-primary {
+                        border-color: var(--brand-primary);
+                    }
+
+                    .border-brand-secondary {
+                        border-color: var(--brand-secondary);
+                    }
+
+                    .border-brand-light {
+                        border-color: var(--brand-light);
+                    }
+
+                    .border-brand-muted {
+                        border-color: var(--brand-muted);
+                    }
+
+                    .border-brand-accent {
+                        border-color: var(--brand-accent);
+                    }
+
+                    .font-eczar {
+                        font-family: 'Eczar', serif;
+                    }
+
+                    .font-eczar {
+                        font-family: 'eczar', sans-serif;
+                    }
+
+                    .font-inknut {
+                        font-family: 'Inknut Antiqua', serif;
+                    }
+
+                    .font-yantra {
+                        font-family: 'Yantramanav', sans-serif;
+                    }
+                </style>
+                <script>
+
+                    function showThankYou(event) {
+                        // Prevent default form submission
+                        if (event) {
+                            event.preventDefault();
+                        }
+
+                        // Process and fill form data
+                        const name = document.getElementById('name').value;
+                        const phone = document.getElementById('phone').value;
+
+                        // Validate form data
+                        if (!name || !phone || phone.length < 10 || phone.length > 15) {
+                            alert('कृपया सभी फील्ड सही ढंग से भरें!');
+                            return false;
+                        }
+
+                        // Process the data (you can modify this part as needed)
+                        const formData = {
+                            customerName: name,
+                            phoneNumber: phone,
+                            timestamp: new Date().toLocaleString('hi-IN'),
+                        };
+
+                        // Fill/store the processed data (example: console log or local storage)
+                        localStorage.setItem('customerOrder', JSON.stringify(formData));
+
+                        // Navigate to ThankYou page
+                        window.location.href = 'ThankYou.html';
+                     
+                        return false; // Prevent form submission
+                    }
+
+                    function closeModal() {
+                        const modal = document.getElementById('thankYouModal');
+                        if (modal) {
+                            modal.style.display = 'none';
+                        }
+                        document.getElementById('contactForm').reset();
+                    }
+
+                </script>
+            </head>
+
+            <body>
+                <!-- Contact Section -->
+                <section class="p-4 bg-brand-primary text-white border-b-2 border-brand-light" id="contact">
+
+                    <!-- Order Header -->
+                    <div class="text-center mb-6 max-[450px]:mb-4">
+                        <h2 class="text-2xl max-[450px]:text-xl font-semibold font-eczar mb-3 max-[450px]:mb-2">
+                            🛡️ अपनी त्वचा को Gath Heal Care से से बचाइए।
+                        </h2>
+                        <p class="text-3xl max-[450px]:text-2xl font-eczar font-bold mb-2">
+                            ⚡ 7–10 दिनों में असर महसूस करें।
+                        </p>
+                        <div class="mt-4 max-[450px]:mt-3">
+                            <p
+                                class="text-lg max-[450px]:text-base font-eczar font-bold text-white bg-gradient-to-r from-brand-primary to-brand-secondary px-4 py-3 rounded-lg shadow-xl ring-2 ring-white/60 max-[450px]:px-3 max-[450px]:py-2 animate-pulse">
+                                <span class="block text-xl max-[450px]:text-lg font-extrabold">👉 अभी ऑर्डर करें</span>
+                                <span class="block text-brand-light text-xl max-[450px]:text-lg font-semibold">और अपनी
+                                    गाँठ
+                                    की समस्या को जड़ से ठीक करने की ओर पहला कदम बढ़ाएँ।</span>
+                            </p>
+                            <p
+                                class="text-3xl max-[450px]:text-2xl font-eczar font-extrabold text-brand-light mt-3 max-[450px]:mt-6 tracking-wide">
+                                🛒 ORDER NOW
+                            </p>
+                        </div>
                     </div>
-                    <div class="mb-4 max-[450px]:mb-3">
-                        <label for="phone"
-                            class="block mb-2 text-2xl max-[450px]:text-xl text-white font-eczar font-semibold max-[450px]:mb-1">फोन
-                            नंबर:</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="अपना फोन नंबर लिखें"
-                            class="w-full p-3 border-none rounded text-lg text-brand-primary  font-bold placeholder-brand-primary font-eczar max-[450px]:p-2 max-[450px]:text-base bg-brand-light">
-                    </div>
-                    <button type="submit"
-                        class="bg-brand-light text-brand-primary font-bold border-none py-4 px-8 rounded text-2xl font-eczar cursor-pointer w-full mt-4 transition-all duration-300 hover:bg-opacity-90 max-[450px]:py-3 max-[450px]:px-4 max-[450px]:text-xl max-[450px]:mt-3"
-                        onclick="showThankYou()">
-                        <span>✨</span>
-                        अभी ऑर्डर करें
-                        <span>✨</span>
-                    </button>
-                </form>
-            </section>
+
+                    <form id="contactForm" onsubmit="return showThankYou(event)">
+                        <div class="mb-4 max-[450px]:mb-3">
+                            <label for="name"
+                                class="block mb-2 text-2xl max-[450px]:text-xl text-white font-eczar font-semibold max-[450px]:mb-1">आपका
+                                नाम:</label>
+                            <input type="text" id="name" name="name" required placeholder="अपना नाम लिखें"
+                                class="w-full p-3 border-none rounded text-lg font-bold text-brand-primary placeholder-brand-muted font-eczar max-[450px]:p-2 max-[450px]:text-base bg-brand-light">
+                        </div>
+                        <div class="mb-4 max-[450px]:mb-3">
+                            <label for="phone"
+                                class="block mb-2 text-2xl max-[450px]:text-xl text-white font-eczar font-semibold max-[450px]:mb-1">फोन
+                                नंबर:</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="अपना फोन नंबर लिखें"
+                                class="w-full p-3 border-none rounded text-lg text-brand-primary  font-bold placeholder-brand-primary font-eczar max-[450px]:p-2 max-[450px]:text-base bg-brand-light">
+                        </div>
+                        <button type="submit"
+                            class="bg-brand-light text-brand-primary font-bold border-none py-4 px-8 rounded text-2xl font-eczar cursor-pointer w-full mt-4 transition-all duration-300 hover:bg-opacity-90 max-[450px]:py-3 max-[450px]:px-4 max-[450px]:text-xl max-[450px]:mt-3">
+                            <span>✨</span>
+                            अभी ऑर्डर करें
+                            <span>✨</span>
+                        </button>
+                    </form>
+                </section>
+            </body>
+
+            </html>
 
             <!-- Gurenteed content  -->
             <section id="guarantee" class="px-4 py-8 max-[450px]:py-6 max-[450px]:px-3">
@@ -6435,21 +6682,6 @@
                     consult with a qualified healthcare professional before starting any new supplement.</p>
             </div>
         </footer>
-        <!-- Thank You Modal -->
-        <div id="thankYouModal" class="hidden fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center"
-            style="background-color:rgba(248,210,200,0.2); border-radius: 15px; padding: 8px 16px; backdrop-filter: blur(10px); border: 2px solid rgba(248,210,200,0.3); box-shadow: 0 8px 25px rgba(0, 0, 0, 0);">
-            <div
-                class="bg-brand-light p-8 rounded-lg text-center max-w-sm mx-4 max-[450px]:p-6 max-[450px]:max-w-xs border-2 border-brand-secondary">
-                <h2 class="text-brand-primary mb-4 text-4xl max-[450px]:text-2xl font-eczar font-bold max-[450px]:mb-3">
-                    धन्यवाद!</h2>
-                <p class="text-lg max-[450px]:text-base mb-6 font-eczar font-medium text-brand-accent">
-                    हमने
-                    आपकी
-                    जानकारी
-                    प्राप्त कर ली है और आपकी
-                    मुफ्त सलाह निर्धारित करने के लिए 24 घंटे के भीतर आपसे संपर्क करेंगे।</p>
-            </div>
-        </div>
         <!-- Fixed CTA Form at Bottom -->
         <div id="fixedCTA"
             class="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-brand-primary shadow-2xl w-full max-w-[450px] md:max-w-[450px] border-t-4 border-brand-secondary">
@@ -6493,54 +6725,6 @@
             </div>
         </div>
         <script>
-            function showThankYou() {
-                // Process and fill form data
-                const name = document.getElementById('name').value;
-                const phone = document.getElementById('phone').value;
-
-                // Validate form data
-                if (!name || !phone || phone.length < 10 || phone.length > 10) {
-                    alert('कृपया सभी फील्ड सही ढंग से भरें!');
-                    return false;
-                }
-
-
-
-                // Process the data (you can modify this part as needed)
-                const formData = {
-                    customerName: name,
-                    phoneNumber: phone,
-                    timestamp: new Date().toLocaleString('hi-IN'),
-                    product: 'Gath Heal Care'
-                };
-                // Fill/store the processed data (example: console log or local storage)
-                localStorage.setItem('customerOrder', JSON.stringify(formData));
-
-                // Show thank you modal if it exists, otherwise show alert
-                const modal = document.getElementById('thankYouModal');
-                if (modal) {
-                    modal.style.display = 'flex';
-                    // Auto close after 3 seconds
-                    setTimeout(() => {
-                        closeModal();
-                    }, 20000);
-                } else {
-                    // Fallback alert with processed data
-                    alert(`धन्यवाद ${name}! आपका ऑर्डर सफलतापूर्वक सबमिट हो गया है। हमारी टीम जल्द ही ${phone} पर आपसे संपर्क करेगी।`);
-                    document.getElementById('contactForm').reset();
-                }
-
-                return true;
-            }
-
-            function closeModal() {
-                const modal = document.getElementById('thankYouModal');
-                if (modal) {
-                    modal.style.display = 'none';
-                }
-                document.getElementById('contactForm').reset();
-            }
-
             function scrollToContact() {
                 document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
             }
